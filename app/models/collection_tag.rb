@@ -1,0 +1,2 @@
+class CollectionTag < ApplicationRecord
+end
