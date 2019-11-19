@@ -1,0 +1,2 @@
+class ItemTagMap < ApplicationRecord
+end
