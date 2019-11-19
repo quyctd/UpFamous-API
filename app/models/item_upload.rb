@@ -1,0 +1,2 @@
+class ItemUpload < ApplicationRecord
+end
