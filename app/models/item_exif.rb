@@ -1,0 +1,2 @@
+class ItemExif < ApplicationRecord
+end
