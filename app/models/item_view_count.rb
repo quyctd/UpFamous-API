@@ -1,0 +1,2 @@
+class ItemViewCount < ApplicationRecord
+end
