@@ -1,0 +1,2 @@
+class ItemViewMap < ApplicationRecord
+end
