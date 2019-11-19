@@ -1,0 +1,2 @@
+class ItemLikeCount < ApplicationRecord
+end
