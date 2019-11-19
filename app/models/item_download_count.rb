@@ -1,0 +1,2 @@
+class ItemDownloadCount < ApplicationRecord
+end
