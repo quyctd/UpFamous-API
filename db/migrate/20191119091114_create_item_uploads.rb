@@ -6,7 +6,7 @@ class CreateItemUploads < ActiveRecord::Migration[6.0]
       t.string :upload_status
       t.string :upload_host
       t.string :upload_ip
-      t.references :user, primary_key: true
+      t.integer :user_id
       t.integer :original_width
       t.integer :original_height
       t.timestamps
