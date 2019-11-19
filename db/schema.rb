@@ -10,7 +10,122 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_19_082256) do
+ActiveRecord::Schema.define(version: 2019_11_19_104624) do
+
+  create_table "collection_items", force: :cascade do |t|
+    t.integer "collection_id"
+    t.integer "item_id"
+    t.boolean "deleted_flag"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "collection_tags", force: :cascade do |t|
+    t.integer "collection_id"
+    t.integer "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "collections", force: :cascade do |t|
+    t.string "name"
+    t.text "describe"
+    t.integer "user_id"
+    t.integer "status"
+    t.datetime "publish_at"
+    t.datetime "private_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "item_download_counts", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "downloads", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "item_download_maps", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "user_id"
+    t.datetime "download_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "item_exifs", force: :cascade do |t|
+    t.integer "item_id"
+    t.string "camera_maker"
+    t.string "camera_model"
+    t.integer "focus_length"
+    t.float "aperture"
+    t.integer "shutter_speed"
+    t.integer "iso"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "item_like_counts", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "likes", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "item_like_maps", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "user_id"
+    t.datetime "like_time"
+    t.boolean "liked_flag", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "item_locations", force: :cascade do |t|
+    t.integer "item_id"
+    t.string "name"
+    t.string "city"
+    t.string "country"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "item_tag_maps", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "item_uploads", force: :cascade do |t|
+    t.integer "item_id"
+    t.string "original_file_name"
+    t.string "upload_status"
+    t.string "upload_host"
+    t.string "upload_ip"
+    t.integer "user_id"
+    t.integer "original_width"
+    t.integer "original_height"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "item_view_counts", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "views", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "item_view_maps", force: :cascade do |t|
+    t.integer "item_id"
+    t.string "view_ip"
+    t.datetime "view_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "items", force: :cascade do |t|
     t.integer "user_id"
@@ -27,6 +142,30 @@ ActiveRecord::Schema.define(version: 2019_11_19_082256) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer "item_id"
+    t.string "color"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_photos_on_item_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_followings", force: :cascade do |t|
+    t.integer "source_user_id"
+    t.integer "target_user_id"
+    t.boolean "follow_flag"
+    t.datetime "following_time"
+    t.datetime "unfollow_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,4 +196,5 @@ ActiveRecord::Schema.define(version: 2019_11_19_082256) do
   end
 
   add_foreign_key "items", "users"
+  add_foreign_key "photos", "items"
 end

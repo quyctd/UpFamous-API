@@ -106,3 +106,83 @@ Migrating to CreateItemUploads (20191119091114)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "item_uploads" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "original_file_name" varchar, "upload_status" varchar, "upload_host" varchar, "upload_ip" varchar, "user_id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "original_width" integer, "original_height" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateItemUploads (20191119091114)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "item_uploads" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "original_file_name" varchar, "upload_status" varchar, "upload_host" varchar, "upload_ip" varchar, "user_id" integer, "original_width" integer, "original_height" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (32.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119091114"]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateItemViewCounts (20191119092830)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "item_view_counts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "views" integer DEFAULT 0, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119092830"]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateItemDownloadCounts (20191119092838)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "item_download_counts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "downloads" integer DEFAULT 0, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119092838"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateItemLocations (20191119092846)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "item_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "name" varchar, "city" varchar, "country" varchar, "latitude" float, "longitude" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119092846"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateItemLikeCounts (20191119092853)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "item_like_counts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "likes" integer DEFAULT 0, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119092853"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTags (20191119094014)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119094014"]]
+  [1m[35m (71.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateItemTagMaps (20191119094023)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "item_tag_maps" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "tag_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119094023"]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateItemExifs (20191119095307)
+  [1m[35m (1.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "item_exifs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "camera_maker" varchar, "camera_model" varchar, "focus_length" integer, "aperture" float, "shutter_speed" integer, "iso" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119095307"]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateItemLikeMaps (20191119095734)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "item_like_maps" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "user_id" integer, "like_time" datetime, "liked_flag" boolean DEFAULT 1, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119095734"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateItemDownloadMaps (20191119095912)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "item_download_maps" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "user_id" integer, "download_time" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119095912"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateItemViewMaps (20191119100001)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "item_view_maps" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "view_ip" varchar, "view_time" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119100001"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCollections (20191119102611)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "collections" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "describe" text, "user_id" integer, "status" integer, "publish_at" datetime, "private_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119102611"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCollectionItems (20191119103117)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "collection_items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "collection_id" integer, "item_id" integer, "deleted_flag" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119103117"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUserFollowings (20191119103310)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "user_followings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "source_user_id" integer, "target_user_id" integer, "follow_flag" boolean, "following_time" datetime, "unfollow_time" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119103310"]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCollectionTags (20191119104624)
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "collection_tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "collection_id" integer, "tag_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119104624"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
