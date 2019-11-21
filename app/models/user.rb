@@ -10,4 +10,15 @@ class User < ApplicationRecord
 
   has_many :given_follows, foreign_key: :source_user_id, class_name: 'UserFollowing'
   has_many :followings, through: :given_follows, source: :followed_user
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :username, presence: true, length: {maximum: 64}
+  validates :email, presence: true, uniqueness: true, email: true
+
+  ROLE_NORMAL = 0
+  ROLE_STAFF = 1
+  ROLE_ADMIN = 2
+  TYPE_INDIVIDUAL = 0
+  TYPE_BRAND = 1
 end
