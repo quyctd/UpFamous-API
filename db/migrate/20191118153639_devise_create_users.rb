@@ -35,8 +35,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :first_name
       t.string :last_name
       t.string :username
-      t.string :role
-      t.integer :user_type, limit: 1
+      t.integer :role, default: 0
+      t.integer :user_type, default: 0, limit: 1
 
       t.timestamps
     end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_19_104624) do
+ActiveRecord::Schema.define(version: 2019_11_26_153624) do
 
   create_table "collection_items", force: :cascade do |t|
     t.integer "collection_id"
@@ -187,10 +187,12 @@ ActiveRecord::Schema.define(version: 2019_11_19_104624) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
-    t.string "role"
-    t.integer "user_type", limit: 1
+    t.integer "role", default: 0
+    t.integer "user_type", limit: 1, default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "authentication_token", limit: 30
+    t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
