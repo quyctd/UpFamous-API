@@ -300,3 +300,53 @@ Processing by V1::SessionsController#create as */*
 Completed 201 Created in 615ms (Views: 50.0ms | ActiveRecord: 0.2ms | Allocations: 16903)
 
 
+Started POST "/v1/users" for 127.0.0.1 at 2019-11-26 23:26:15 +0700
+  [1m[35m (17.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"dev", "last_name"=>"2", "email"=>"dev2@dev.com", "username"=>"dev2", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/v1/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (55.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dev2@dev.com"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:5:in `create'
+  [1m[36mCACHE User Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dev2@dev.com"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:5:in `create'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "CucfWjzMsm6sqYRHfaWm"]]
+  ↳ app/controllers/v1/users_controller.rb:5:in `create'
+  [1m[36mUser Create (8.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmation_sent_at", "first_name", "last_name", "username", "created_at", "updated_at", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "dev2@dev.com"], ["encrypted_password", "$2a$11$nS8oj85Rimd3GkjKfDQp3ehVyNUDyDgyCSTCVnaAMsVoPlSCHadbW"], ["confirmation_token", "WqbymTkWV2nxLQbHgvrv"], ["confirmation_sent_at", "2019-11-26 16:26:16.985381"], ["first_name", "dev"], ["last_name", "2"], ["username", "dev2"], ["created_at", "2019-11-26 16:26:16.984758"], ["updated_at", "2019-11-26 16:26:16.984758"], ["authentication_token", "CucfWjzMsm6sqYRHfaWm"]]
+  ↳ app/controllers/v1/users_controller.rb:5:in `create'
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/v1/users_controller.rb:5:in `create'
+  Rendering /Users/soramac/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/soramac/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/mailer/confirmation_instructions.html.erb (Duration: 14.9ms | Allocations: 550)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 103.8ms
+Delivered mail 5ddd52298645d_89913ff51ffd3b7c5869a@Dinhs-MacBook-Pro.local.mail (208.8ms)
+Date: Tue, 26 Nov 2019 23:26:17 +0700
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: dev2@dev.com
+Message-ID: <5ddd52298645d_89913ff51ffd3b7c5869a@Dinhs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome dev2@dev.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:4200/users/confirmation?confirmation_token=WqbymTkWV2nxLQbHgvrv">Confirm my account</a></p>
+
+Completed 500 Internal Server Error in 1752ms (ActiveRecord: 72.2ms | Allocations: 49233)
+
+
+  
+ActionView::MissingTemplate (Missing template v1/users/user, application/user with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/soramac/Documents/HUST/Project3/UpFamous-API/app/views"
+  * "/Users/soramac/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views"
+  * "/Users/soramac/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Users/soramac/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+):
+  
+app/controllers/v1/users_controller.rb:6:in `create'
