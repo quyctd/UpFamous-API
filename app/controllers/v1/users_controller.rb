@@ -5,14 +5,16 @@ module V1
       if @user.save
         render :create, status: :created
       else
-        head(:unprocessable_entity)
+        @errors = @user.errors.full_messages
+        puts @errors
+        render :'v1/errors/index', status: :unprocessable_entity
       end
     end
 
     private
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :username, :password)
+      params.permit(:email, :first_name, :last_name, :username, :password)
     end
   end
 end
