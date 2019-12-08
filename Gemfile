@@ -56,4 +56,5 @@ gem 'simple_token_authentication'
 gem 'mailcatcher'
 
 # Cloudinary gem
+gem 'carrierwave'
 gem 'cloudinary'
