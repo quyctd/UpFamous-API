@@ -948,3 +948,34 @@ Content-Transfer-Encoding: 7bit
 Completed 201 Created in 539ms (Views: 3.7ms | ActiveRecord: 16.3ms | Allocations: 42469)
 
 
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ModifyColumnOfItem (20191208041534)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aitems" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer DEFAULT NULL, "content_type" integer DEFAULT NULL, "description" text DEFAULT NULL, "status" integer DEFAULT NULL, "uploaded_at" datetime DEFAULT NULL, "width" integer DEFAULT NULL, "height" integer DEFAULT NULL, "remove_at" datetime DEFAULT NULL, "deleted_flag" boolean DEFAULT NULL, "submit_thumbnail_url" varchar DEFAULT NULL, "search_flag" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aitems_on_user_id" ON "aitems" ("user_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "aitems" ("id","user_id","content_type","description","status","uploaded_at","width","height","remove_at","deleted_flag","submit_thumbnail_url","search_flag","created_at","updated_at")
+                     SELECT "id","user_id","content_type","description","status","uploaded_at","width","height","remove_at","deleted_flag","submit_thumbnail_url","search_flag","created_at","updated_at" FROM "items"[0m
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "items" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer DEFAULT NULL, "content_type" integer DEFAULT NULL, "description" text DEFAULT NULL, "status" integer DEFAULT NULL, "uploaded_at" datetime DEFAULT NULL, "width" integer DEFAULT NULL, "height" integer DEFAULT NULL, "remove_at" datetime DEFAULT NULL, "deleted_flag" boolean DEFAULT NULL, "search_flag" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_d4b6334db2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_items_on_user_id" ON "items" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "items" ("id","user_id","content_type","description","status","uploaded_at","width","height","remove_at","deleted_flag","search_flag","created_at","updated_at")
+                     SELECT "id","user_id","content_type","description","status","uploaded_at","width","height","remove_at","deleted_flag","search_flag","created_at","updated_at" FROM "aitems"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aitems"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "items" ADD "cloudinary_id" varchar[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "items" ADD "cloudinary_ver" varchar[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "items" ADD "format" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191208041534"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

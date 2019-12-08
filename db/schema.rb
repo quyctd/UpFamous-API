@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_153624) do
+ActiveRecord::Schema.define(version: 2019_12_08_041534) do
 
   create_table "collection_items", force: :cascade do |t|
     t.integer "collection_id"
@@ -137,10 +137,12 @@ ActiveRecord::Schema.define(version: 2019_11_26_153624) do
     t.integer "height"
     t.datetime "remove_at"
     t.boolean "deleted_flag"
-    t.string "submit_thumbnail_url"
     t.boolean "search_flag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "cloudinary_id"
+    t.string "cloudinary_ver"
+    t.string "format"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
