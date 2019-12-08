@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resources :collections
     resources :photos
-    resources :uploads
+    resources :uploads, only: [:create]
   end
 end

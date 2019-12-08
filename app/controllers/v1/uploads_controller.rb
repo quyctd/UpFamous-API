@@ -3,6 +3,8 @@ module V1
     def create
       user_token = params[:auth_token]
       @user = User.where(authentication_token: user_token).first
+      @ret = []
+      @items = []
       if @user
         uploads = params[:list_upload]
         uploads.each do |upload|
@@ -12,7 +14,12 @@ module V1
                                           original_width: item.width,
                                           original_height: item.height,
                                           original_file_name: upload[:original_file_name])
+          tags = Cloudinary::Api.update(item[:cloudinary_id], categorization: "imagga_tagging", auto_tagging: 0.7)
+          puts tags
+          @items.append(item)
+          @ret.append(tags)
         end
+        render :create, status: :created
       else
         head(:unprocessable_entity)
       end

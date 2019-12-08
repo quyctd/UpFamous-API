@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: flask-image
+  api_key: '133444264233997'
+  api_secret: SrlSO-4T4W2lQx72PEYGHSEnOwU
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: flask-image
+  api_key: '133444264233997'
+  api_secret: SrlSO-4T4W2lQx72PEYGHSEnOwU
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: flask-image
+  api_key: '133444264233997'
+  api_secret: SrlSO-4T4W2lQx72PEYGHSEnOwU
+  enhance_image_tag: true
+  static_file_support: false
