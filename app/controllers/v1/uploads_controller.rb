@@ -1,12 +1,17 @@
 module V1
   class UploadsController < ApplicationController
     def create
-      user_token = upload_params[:auth_token]
+      user_token = params[:auth_token]
       @user = User.where(authentication_token: user_token).first
       if @user
-        uploads = upload_params[:list_upload]
+        uploads = params[:list_upload]
         uploads.each do |upload|
           item = create_item(upload)
+          upload_item = ItemUpload.create(item_id: item.id,
+                                          user_id: @user.id,
+                                          original_width: item.width,
+                                          original_height: item.height,
+                                          original_file_name: upload[:original_file_name])
         end
       else
         head(:unprocessable_entity)
@@ -22,21 +27,18 @@ module V1
 
   def item_params(uparams)
     {
-        user_id: params[:user_id],
-        content_type: 0,
-        description: uparams[:description],
-        status: 1,
-        uploaded_at: uparams[:uploaded_at],
-        width: uparams[:width],
-        height: uparams[:height],
-        deleted_flag: 0,
-        cloudinary_id: params[:cloudinary_id],
-        cloudinary_ver: params[:cloudinary_ver],
-        format: params[:format]
+      user_id: params[:user_id],
+      content_type: 0,
+      description: uparams[:description],
+      status: 1,
+      uploaded_at: uparams[:uploaded_at],
+      width: uparams[:width],
+      height: uparams[:height],
+      deleted_flag: 0,
+      cloudinary_id: params[:cloudinary_id],
+      cloudinary_ver: params[:cloudinary_ver],
+      format: params[:format]
     }
   end
 
-  def upload_params
-    params.permit(:auth_token, :list_upload)
-  end
 end
