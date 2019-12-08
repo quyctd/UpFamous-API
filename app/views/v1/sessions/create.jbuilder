@@ -1,4 +1,4 @@
-json.data do
+json.body do
   json.user do
     json.call(
       @user,
