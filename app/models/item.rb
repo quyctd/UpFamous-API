@@ -6,7 +6,6 @@ class Item < ApplicationRecord
   has_one :item_location
   has_one :item_exif
   has_one :item_upload
-  has_one :photo
 
   has_many :item_like_maps
   has_many :item_download_maps

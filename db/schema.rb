@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_08_111451) do
+ActiveRecord::Schema.define(version: 2019_12_09_141002) do
 
   create_table "collection_items", force: :cascade do |t|
     t.integer "collection_id"
@@ -146,14 +146,6 @@ ActiveRecord::Schema.define(version: 2019_12_08_111451) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.integer "item_id"
-    t.string "color"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_photos_on_item_id"
-  end
-
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -201,5 +193,4 @@ ActiveRecord::Schema.define(version: 2019_12_08_111451) do
   end
 
   add_foreign_key "items", "users"
-  add_foreign_key "photos", "items"
 end
