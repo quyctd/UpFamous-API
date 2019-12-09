@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   has_one :item_view_count
   has_one :item_location
   has_one :item_exif
-  belongs_to :item_upload
+  has_one :item_upload
   has_one :photo
 
   has_many :item_like_maps
