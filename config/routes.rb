@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :sessions, only: [:create, :destroy, :show]
     resources :users, only: [:create]
     resources :collections
-    resources :photos
     resources :uploads, only: [:create]
+    resources :items
   end
 end
