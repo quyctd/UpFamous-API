@@ -13,4 +13,6 @@ class Item < ApplicationRecord
   has_many :item_tag_maps
   has_many :collection_items
 
+  scope :horizontal_photo, -> { where('width > height') }
+
 end
