@@ -8502,3 +8502,792 @@ These autoloaded constants have been unloaded.
 
 Please, check the "Autoloading and Reloading Constants" guide for solutions.
  (called from <main> at /Users/soramac/Documents/HUST/Project3/UpFamous-API/config/environment.rb:5)
+Started GET "/v1/items/homepage" for ::1 at 2019-12-10 09:40:33 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (6.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 73.1ms | Allocations: 14951)
+Completed 200 OK in 162ms (Views: 75.1ms | ActiveRecord: 6.5ms | Allocations: 24944)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-10 09:41:56 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 10.4ms | Allocations: 863)
+Completed 200 OK in 18ms (Views: 11.5ms | ActiveRecord: 0.6ms | Allocations: 1707)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-10 09:41:57 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 8.3ms | Allocations: 1701)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.5ms | Allocations: 2006)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-10 09:43:35 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 4.5ms | Allocations: 863)
+Completed 200 OK in 17ms (Views: 10.4ms | ActiveRecord: 0.9ms | Allocations: 1707)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-10 09:43:50 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 3.0ms | Allocations: 863)
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 1.3ms | Allocations: 1706)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-10 09:44:11 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 2.3ms | Allocations: 863)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.9ms | Allocations: 1706)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-10 10:00:42 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+Started GET "/v1/items/all" for ::1 at 2019-12-10 10:00:42 +0700
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by V1::ItemsController#endless_item as HTML
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 8.3ms | Allocations: 2218)
+  Rendering v1/items/endless_item.jbuilder
+Completed 200 OK in 18ms (Views: 13.1ms | ActiveRecord: 0.8ms | Allocations: 4080)
+
+
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 5.2ms | Allocations: 1804)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 2031)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-10 11:44:46 +0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/v1/items/homepage" for ::1 at 2019-12-10 11:44:46 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 6.5ms | Allocations: 2413)
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 3.4ms | Allocations: 917)
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 0.8ms | Allocations: 1764)
+
+
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.3ms | Allocations: 3468)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-10 18:55:00 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/v1/items/all" for ::1 at 2019-12-10 18:55:00 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  Rendered v1/items/endless_item.jbuilder (Duration: 4.0ms | Allocations: 1750)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 2224)
+
+
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 716.0ms | Allocations: 1119)
+Completed 200 OK in 724ms (Views: 718.7ms | ActiveRecord: 0.7ms | Allocations: 3807)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-10 22:09:48 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/v1/items/all" for ::1 at 2019-12-10 22:09:48 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+Processing by V1::ItemsController#endless_item as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendering v1/items/endless_item.jbuilder
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 3.9ms | Allocations: 1352)
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.6ms | Allocations: 2371)
+
+
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 3.9ms | Allocations: 1862)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 2208)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 20:22:16 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 9.8ms | Allocations: 919)
+Completed 200 OK in 13ms (Views: 4.8ms | ActiveRecord: 6.4ms | Allocations: 1767)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-11 20:22:16 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 3.1ms | Allocations: 1621)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 1791)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 20:58:34 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/v1/items/all" for ::1 at 2019-12-11 20:58:34 +0700
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 3.7ms | Allocations: 1248)
+Completed 200 OK in 11ms (Views: 4.2ms | ActiveRecord: 0.8ms | Allocations: 2136)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 3.9ms | Allocations: 1624)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms | Allocations: 1794)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 20:58:56 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 13.2ms | Allocations: 916)
+Completed 200 OK in 21ms (Views: 12.7ms | ActiveRecord: 3.8ms | Allocations: 1760)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-11 20:58:56 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 6.5ms | Allocations: 1584)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 1754)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 20:59:06 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (3.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 3.7ms | Allocations: 863)
+Completed 200 OK in 15ms (Views: 4.7ms | ActiveRecord: 3.4ms | Allocations: 1706)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-11 20:59:06 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 4.2ms | Allocations: 1584)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 1754)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 20:59:42 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (5.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/v1/items/all" for ::1 at 2019-12-11 20:59:42 +0700
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 5.7ms | Allocations: 1185)
+Completed 200 OK in 22ms (Views: 7.9ms | ActiveRecord: 5.2ms | Allocations: 2077)
+
+
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 4.4ms | Allocations: 1584)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 1754)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:05:18 +0700
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:05:18 +0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+Processing by V1::ItemsController#endless_item as HTML
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 7.5ms | Allocations: 2096)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 1.5ms | Allocations: 2695)
+
+
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 12.1ms | Allocations: 2812)
+Completed 200 OK in 22ms (Views: 12.7ms | ActiveRecord: 1.4ms | Allocations: 3802)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:08:09 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:08:09 +0700
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by V1::ItemsController#endless_item as HTML
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 4.2ms | Allocations: 1191)
+  Rendering v1/items/endless_item.jbuilder
+Completed 200 OK in 14ms (Views: 6.7ms | ActiveRecord: 1.6ms | Allocations: 3161)
+
+
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 7.6ms | Allocations: 1781)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.3ms | Allocations: 1991)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:08:21 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:08:21 +0700
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 6.5ms | Allocations: 1255)
+Completed 200 OK in 13ms (Views: 7.5ms | ActiveRecord: 1.7ms | Allocations: 2119)
+
+
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 5.7ms | Allocations: 1587)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 1757)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:08:38 +0700
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:08:38 +0700
+Processing by V1::ItemsController#endless_item as HTML
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered v1/items/endless_item.jbuilder (Duration: 7.4ms | Allocations: 2392)
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.2ms | Allocations: 3272)
+
+
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 8.8ms | Allocations: 1916)
+Completed 200 OK in 18ms (Views: 12.2ms | ActiveRecord: 0.8ms | Allocations: 3569)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:09:11 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:09:11 +0700
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 7.1ms | Allocations: 1051)
+Completed 200 OK in 18ms (Views: 12.6ms | ActiveRecord: 1.3ms | Allocations: 2079)
+
+
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 5.1ms | Allocations: 1621)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.5ms | Allocations: 1791)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:09:40 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (2.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:09:40 +0700
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 3.1ms | Allocations: 871)
+Completed 200 OK in 15ms (Views: 5.0ms | ActiveRecord: 2.2ms | Allocations: 2098)
+
+
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 5.3ms | Allocations: 1584)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 1754)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:10:25 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (8.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 2.0ms | Allocations: 863)
+Completed 200 OK in 21ms (Views: 2.5ms | ActiveRecord: 8.4ms | Allocations: 1706)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:10:25 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 9.0ms | Allocations: 1584)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.5ms | Allocations: 1754)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:11:07 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (1.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:11:07 +0700
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 6.3ms | Allocations: 873)
+Completed 200 OK in 17ms (Views: 9.3ms | ActiveRecord: 1.9ms | Allocations: 2900)
+
+
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 5.1ms | Allocations: 1584)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 1754)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:11:44 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:11:44 +0700
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+Processing by V1::ItemsController#endless_item as HTML
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 10.2ms | Allocations: 1617)
+  Rendered v1/items/endless_item.jbuilder (Duration: 11.2ms | Allocations: 2258)
+Completed 200 OK in 21ms (Views: 11.9ms | ActiveRecord: 1.2ms | Allocations: 3797)
+
+
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.8ms | Allocations: 2432)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:12:12 +0700
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:12:12 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+Processing by V1::ItemsController#endless_item as HTML
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/endless_item.jbuilder
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/endless_item.jbuilder (Duration: 33.6ms | Allocations: 2306)
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 31.6ms | Allocations: 2352)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.8ms | Allocations: 2767)
+
+
+Completed 200 OK in 44ms (Views: 37.2ms | ActiveRecord: 0.8ms | Allocations: 3528)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:12:37 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 3.3ms | Allocations: 863)
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 1.1ms | Allocations: 1706)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:12:37 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 5.7ms | Allocations: 1584)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.3ms | Allocations: 1754)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:13:49 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:13:49 +0700
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 3.4ms | Allocations: 884)
+Completed 200 OK in 11ms (Views: 3.9ms | ActiveRecord: 0.6ms | Allocations: 1916)
+
+
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 4.4ms | Allocations: 1584)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms | Allocations: 1754)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:15:17 +0700
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:15:17 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+Processing by V1::ItemsController#endless_item as HTML
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/endless_item.jbuilder
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/endless_item.jbuilder (Duration: 7.5ms | Allocations: 2302)
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 7.7ms | Allocations: 2353)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.3ms | Allocations: 2777)
+
+
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 0.9ms | Allocations: 3522)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:16:59 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 2.1ms | Allocations: 863)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 1706)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:16:59 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 3.4ms | Allocations: 1584)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 1754)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:17:27 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 6.2ms | Allocations: 863)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.6ms | Allocations: 1706)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:17:27 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 4.7ms | Allocations: 1584)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 1754)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:17:41 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 9.4ms | Allocations: 863)
+Completed 200 OK in 18ms (Views: 10.8ms | ActiveRecord: 1.0ms | Allocations: 1706)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:17:41 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 4.6ms | Allocations: 1584)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 1754)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:18:14 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 5.2ms | Allocations: 1001)
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:18:14 +0700
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 1.0ms | Allocations: 2020)
+
+
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 5.0ms | Allocations: 1584)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 1754)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:18:39 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 2.8ms | Allocations: 863)
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.7ms | Allocations: 1706)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:18:39 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 4.2ms | Allocations: 1584)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 1754)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:19:03 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:19:03 +0700
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 4.3ms | Allocations: 863)
+Completed 200 OK in 12ms (Views: 6.0ms | ActiveRecord: 0.8ms | Allocations: 2040)
+
+
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 7.1ms | Allocations: 1584)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.9ms | Allocations: 1754)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:21:33 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (1.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:21:33 +0700
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 16.6ms | Allocations: 1941)
+Processing by V1::ItemsController#endless_item as HTML
+Completed 200 OK in 28ms (Views: 20.4ms | ActiveRecord: 2.0ms | Allocations: 4247)
+
+
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 4.3ms | Allocations: 1624)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 1840)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:21:46 +0700
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:21:46 +0700
+Processing by V1::ItemsController#endless_item as HTML
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered v1/items/endless_item.jbuilder (Duration: 8.4ms | Allocations: 2132)
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.3ms | Allocations: 3276)
+
+
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 10.8ms | Allocations: 920)
+Completed 200 OK in 23ms (Views: 15.2ms | ActiveRecord: 1.3ms | Allocations: 3560)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:22:19 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:22:19 +0700
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by V1::ItemsController#endless_item as HTML
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 7.0ms | Allocations: 2165)
+  Rendering v1/items/endless_item.jbuilder
+Completed 200 OK in 27ms (Views: 8.7ms | ActiveRecord: 1.0ms | Allocations: 3337)
+
+
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 5.6ms | Allocations: 1763)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 1990)
+
+
+Started GET "/v1/items/homepage" for ::1 at 2019-12-11 21:23:15 +0700
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 3.7ms | Allocations: 916)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 1.5ms | Allocations: 1760)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-11 21:23:15 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 8.0ms | Allocations: 1584)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.7ms | Allocations: 1754)
+
+
