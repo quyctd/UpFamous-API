@@ -13,6 +13,9 @@ class User < ApplicationRecord
   has_many :given_follows, foreign_key: :source_user_id, class_name: 'UserFollowing'
   has_many :followings, through: :given_follows, source: :followed_user
 
+  has_many :item_like_maps
+  has_many :collections
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :username, presence: true, length: {maximum: 64}

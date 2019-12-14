@@ -11,6 +11,15 @@ module V1
       end
     end
 
+    def user_info
+      @user = User.where(authentication_token: params[:username]).first
+      if @user
+        render :user_info, status: :ok
+      else
+        head(:unprocessable_entity)
+      end
+    end
+
     private
 
     def user_params

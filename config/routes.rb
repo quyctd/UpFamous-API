@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resources :collections
     resources :uploads, only: [:create]
+    get '/users/:username', to: 'users#user_info'
     get 'items/homepage', to: 'items#homepage_thumbnail'
     get 'items/all', to: 'items#endless_item'
   end
