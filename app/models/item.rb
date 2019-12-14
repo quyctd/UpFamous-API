@@ -14,5 +14,6 @@ class Item < ApplicationRecord
   has_many :collection_items
 
   scope :horizontal_photo, -> { where('width > height') }
+  scope :vertical_photo, -> { where('width <= height') }
 
 end
