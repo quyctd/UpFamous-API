@@ -30,4 +30,8 @@ class User < ApplicationRecord
   def full_name
     [first_name, last_name].reject(&:blank?).join(' ').titleize
   end
+
+  def following_items
+    Item.where(user_id: following_ids).newest
+  end
 end

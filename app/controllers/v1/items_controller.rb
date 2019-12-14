@@ -9,6 +9,15 @@ module V1
       end
     end
 
+    def show
+      @item = Item.find(id: params[:item_id])
+      if @item
+        render :item, status: :ok
+      else
+        head(:unprocessable_entity)
+      end
+    end
+
     def endless_item
       items = Item.all
       @ret = []
@@ -27,6 +36,16 @@ module V1
         @ret.append(ret_item)
       end
       render :endless_item, status: :ok
+    end
+
+    def following
+      user = User.find(params[:user_id])
+      if user
+        @items = user.following_items
+        render :following, status: :ok
+      else
+        head(:unprocessable_entity)
+      end
     end
   end
 end
