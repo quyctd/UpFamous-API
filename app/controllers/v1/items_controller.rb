@@ -10,9 +10,9 @@ module V1
     end
 
     def show
-      @item = Item.find(id: params[:item_id])
+      @item = Item.find(params[:item_id])
       if @item
-        render :item, status: :ok
+        render :show, status: :ok
       else
         head(:unprocessable_entity)
       end

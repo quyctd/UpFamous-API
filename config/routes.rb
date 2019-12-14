@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get 'items/homepage', to: 'items#homepage_thumbnail'
     get 'items/all', to: 'items#endless_item'
     get 'join_photo', to: 'users#join_photo'
-    get 'items/show', to: 'items#show'
+    get 'items/show/:item_id', to: 'items#show'
     post 'items/following', to: 'items#following'
   end
 end

@@ -15346,3 +15346,188 @@ Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.6ms | Allocations: 331
 Completed 200 OK in 93ms (Views: 88.8ms | ActiveRecord: 3.3ms | Allocations: 14748)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/soramac/Documents/HUST/Project3/UpFamous-API/config/environment.rb:5)
+Started GET "/v1/items/show/1" for ::1 at 2019-12-14 19:35:15 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item_id"=>"1", "item"=>{}}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:13:in `show'
+Completed 404 Not Found in 6ms (ActiveRecord: 0.3ms | Allocations: 865)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Item with 'id'={:id=>"1"}):
+  
+app/controllers/v1/items_controller.rb:13:in `show'
+Started GET "/v1/items/show/1" for ::1 at 2019-12-14 19:35:59 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item_id"=>"1", "item"=>{}}
+  [1m[36mItem Load (7.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:13:in `show'
+  Rendering v1/items/_item.jbuilder
+  Rendered v1/items/_item.jbuilder (Duration: 894.6ms | Allocations: 266376)
+Completed 500 Internal Server Error in 1102ms (ActiveRecord: 91.7ms | Allocations: 276576)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `item' for #<#<Class:0x00007f99c72a6c10>:0x00007f99c72bbf48>
+Did you mean?  @item):
+    1: json.id item.id
+    2: json.width item.width
+    3: json.height item.height
+    4: json.cloudinary_ver item.cloudinary_ver
+  
+app/views/v1/items/_item.jbuilder:1
+app/controllers/v1/items_controller.rb:15:in `show'
+Started GET "/v1/items/show/1" for ::1 at 2019-12-14 19:36:38 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item_id"=>"1", "item"=>{}}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:13:in `show'
+  Rendering v1/items/_item.jbuilder
+  Rendered v1/items/_item.jbuilder (Duration: 872.3ms | Allocations: 265664)
+Completed 500 Internal Server Error in 910ms (ActiveRecord: 12.0ms | Allocations: 275652)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `item' for #<#<Class:0x00007f99cb256720>:0x00007f99cb2544c0>):
+    1: json.id item.id
+    2: json.width item.width
+    3: json.height item.height
+    4: json.cloudinary_ver item.cloudinary_ver
+  
+app/views/v1/items/_item.jbuilder:1
+app/controllers/v1/items_controller.rb:15:in `show'
+Started GET "/v1/items/show/1" for ::1 at 2019-12-14 19:37:54 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item_id"=>"1", "item"=>{}}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:13:in `show'
+  Rendering v1/items/_item.jbuilder
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[36mItemLikeMap Load (1.4ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:12
+  [1m[36mCollectionItem Load (1.6ms)[0m  [1m[34mSELECT "collection_items".* FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:12
+  Rendered v1/items/_item.jbuilder (Duration: 83.1ms | Allocations: 19740)
+Completed 200 OK in 180ms (Views: 76.1ms | ActiveRecord: 10.5ms | Allocations: 29890)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-14 19:38:01 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendered v1/items/endless_item.jbuilder (Duration: 12.4ms | Allocations: 975)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.0ms | Allocations: 1328)
+
+
+  
+ActionView::Template::Error (The value (@item) of the option `as` is not a valid Ruby identifier; make sure it starts with lowercase letter, and is followed by any combination of letters, numbers and underscores.):
+    1: json.body do
+    2:   json.array! @items, partial: 'item', as: :@item
+    3: end
+  
+app/views/v1/items/endless_item.jbuilder:2
+app/views/v1/items/endless_item.jbuilder:1
+app/controllers/v1/items_controller.rb:23:in `endless_item'
+Started GET "/v1/items/homepage" for ::1 at 2019-12-14 19:38:02 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 4.9ms | Allocations: 1000)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 1.0ms | Allocations: 1981)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-14 19:40:18 +0700
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/v1/items/homepage" for ::1 at 2019-12-14 19:40:19 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  Rendered v1/items/_item.jbuilder (Duration: 186.2ms | Allocations: 17075)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  Rendered v1/items/_item.jbuilder (Duration: 4.6ms | Allocations: 777)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  Rendered v1/items/_item.jbuilder (Duration: 3.0ms | Allocations: 777)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  Rendered v1/items/_item.jbuilder (Duration: 2.5ms | Allocations: 777)
+  [1m[36mItemLikeMap Load (2.1ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mCollectionItem Load (2.2ms)[0m  [1m[34mSELECT "collection_items".* FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (2.1ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mCollectionItem Load (0.3ms)[0m  [1m[34mSELECT "collection_items".* FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mCollectionItem Load (0.3ms)[0m  [1m[34mSELECT "collection_items".* FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.4ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mCollectionItem Load (1.4ms)[0m  [1m[34mSELECT "collection_items".* FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  Rendered v1/items/endless_item.jbuilder (Duration: 441.4ms | Allocations: 38262)
+Completed 200 OK in 446ms (Views: 425.8ms | ActiveRecord: 19.5ms | Allocations: 38822)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 162.5ms | Allocations: 15712)
+Completed 200 OK in 262ms (Views: 162.8ms | ActiveRecord: 2.4ms | Allocations: 25868)
+
+
+Started GET "/v1/items/show/4" for ::1 at 2019-12-14 19:40:30 +0700
+Processing by V1::ItemsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item_id"=>"4", "item"=>{}}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:13:in `show'
+  Rendering v1/items/show.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  Rendered v1/items/_item.jbuilder (Duration: 17.3ms | Allocations: 2266)
+  [1m[36mItemLikeMap Load (0.3ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/items/show.jbuilder:3
+  [1m[36mCollectionItem Load (0.4ms)[0m  [1m[34mSELECT "collection_items".* FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/items/show.jbuilder:3
+  Rendered v1/items/show.jbuilder (Duration: 32.2ms | Allocations: 5237)
+Completed 200 OK in 39ms (Views: 32.0ms | ActiveRecord: 2.6ms | Allocations: 6179)
+
+
