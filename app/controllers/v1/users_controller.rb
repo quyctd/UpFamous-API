@@ -12,7 +12,7 @@ module V1
     end
 
     def user_info
-      @user = User.where(authentication_token: params[:username]).first
+      @user = User.where(username: params[:username]).first
       if @user
         render :user_info, status: :ok
       else

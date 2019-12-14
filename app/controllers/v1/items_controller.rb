@@ -20,6 +20,7 @@ module V1
           cloudinary_id: item.cloudinary_id,
           format: item.format,
           user: item.user,
+          user_fullname: item.user.full_name,
           likes: item.item_like_maps,
           collections: item.collection_items
         }

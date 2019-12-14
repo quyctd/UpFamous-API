@@ -26,4 +26,8 @@ class User < ApplicationRecord
   ROLE_ADMIN = 2
   TYPE_INDIVIDUAL = 0
   TYPE_BRAND = 1
+
+  def full_name
+    [first_name, last_name].reject(&:blank?).join(' ').titleize
+  end
 end
