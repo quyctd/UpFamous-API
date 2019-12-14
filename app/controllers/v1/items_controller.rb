@@ -9,15 +9,6 @@ module V1
       end
     end
 
-    def join_photo
-      @item = Item.vertical_photo.random.take!
-      if @item
-        render :join_photo, status: :ok
-      else
-        head(:unprocessable_entity)
-      end
-    end
-
     def endless_item
       items = Item.all
       @ret = []
