@@ -15,5 +15,5 @@ class Item < ApplicationRecord
 
   scope :horizontal_photo, -> { where('width > height') }
   scope :vertical_photo, -> { where('width <= height') }
-
+  scope :random, -> { order('RANDOM()') }
 end

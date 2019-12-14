@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     get '/users/:username', to: 'users#user_info'
     get 'items/homepage', to: 'items#homepage_thumbnail'
     get 'items/all', to: 'items#endless_item'
+    get 'items/join_photo', to: 'items#join_photo'
   end
 end
