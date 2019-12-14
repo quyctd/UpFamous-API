@@ -1,3 +1,3 @@
 json.body do
-  json.array! @ret
+  json.array! @items, partial: 'item', as: :item
 end

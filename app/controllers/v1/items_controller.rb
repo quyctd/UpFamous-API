@@ -19,22 +19,7 @@ module V1
     end
 
     def endless_item
-      items = Item.all
-      @ret = []
-      items.each do |item|
-        ret_item = {
-          width: item.width,
-          height: item.height,
-          cloudinary_ver: item.cloudinary_ver,
-          cloudinary_id: item.cloudinary_id,
-          format: item.format,
-          user: item.user,
-          user_fullname: item.user.full_name,
-          likes: item.item_like_maps,
-          collections: item.collection_items
-        }
-        @ret.append(ret_item)
-      end
+      @items = Item.all.newest
       render :endless_item, status: :ok
     end
 
