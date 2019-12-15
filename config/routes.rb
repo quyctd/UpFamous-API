@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     get 'join_photo', to: 'users#join_photo'
     get 'items/show/:item_id', to: 'items#show'
     post 'items/following', to: 'items#following'
+    post 'items/like', to: 'items#like'
   end
 end

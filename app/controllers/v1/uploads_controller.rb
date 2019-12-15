@@ -22,6 +22,7 @@ module V1
             tags = tag_result['tags']
             tags_info = tag_result['info']['categorization']['aws_rek_tagging']['data']
             puts "TAG INFO: #{tags_info}"
+            create_item_count(item.id)
             create_item_tags(item.id, tags, tags_info)
             @items.append(item)
           else
@@ -32,6 +33,12 @@ module V1
       else
         head(:unprocessable_entity)
       end
+    end
+
+    def create_item_count(item_id)
+      ItemLikeCount.create!(item_id: item_id)
+      ItemViewCount.create!(item_id: item_id)
+      ItemDownloadCount.create!(item_id: item_id)
     end
 
     def create_item_tags(item_id, tags, tags_info)
