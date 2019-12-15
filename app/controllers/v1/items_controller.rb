@@ -34,19 +34,19 @@ module V1
     end
 
     def like
-      item = Item.find(params[:item_id])
+      @item = Item.find(params[:item_id])
       user = User.find(params[:user_id])
-      @item_like = ItemLikeMap.where(item_id: item.id, user_id: user.id).first
-      @item_like_count = ItemLikeCount.where(item_id: item.id).first
-      if @item_like
-        @item_like.liked_flag = !@item_like.liked_flag
-        @item_like_count.count += @item_like.liked_flag == true ? 1 : -1
+      item_like = ItemLikeMap.where(item_id: @item.id, user_id: user.id).first
+      item_like_count = ItemLikeCount.where(item_id: @item.id).first
+      if item_like
+        item_like.liked_flag = !item_like.liked_flag
+        item_like_count.likes += item_like.liked_flag == true ? 1 : -1
       else
-        ItemLikeMap.create!(item_id: item.id, user_id: user.id, like_time: Date.now)
-        @item_like_count.count += 1
+        ItemLikeMap.create!(item_id: @item.id, user_id: user.id, like_time: DateTime.now)
+        item_like_count.likes += 1
       end
 
-      if @item_like.save && @item_like_count.save
+      if item_like.save && item_like_count.save
         render :like, status: :ok
       else
         head(:unprocessable_entity)

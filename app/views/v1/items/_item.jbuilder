@@ -9,3 +9,4 @@ json.user_fullname item.user.full_name
 json.likes item.item_like_maps
 json.collections item.collection_items
 json.description item.description
+json.item_like_maps item.item_like_maps
