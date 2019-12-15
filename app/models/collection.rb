@@ -10,6 +10,10 @@ class Collection < ApplicationRecord
     Item.where(id: ids).newest
   end
 
+  def ids
+    items.pluck(:id)
+  end
+
   def img_count
     items.length
   end
