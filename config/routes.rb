@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :v1, default: { format: :json } do
     resources :sessions, only: %i[create destroy show]
     resources :users, only: %i[create]
-    resources :collections
+    resources :collections, only: [:create]
     resources :uploads, only: [:create]
     get '/users/:username', to: 'users#user_info'
     get 'items/homepage', to: 'items#homepage_thumbnail'
