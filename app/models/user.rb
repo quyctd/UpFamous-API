@@ -34,4 +34,9 @@ class User < ApplicationRecord
   def following_items
     Item.where(user_id: following_ids).newest
   end
+
+  def like_items
+    ids = item_like_maps.pluck(:item_id)
+    Item.where(id: ids).newest
+  end
 end

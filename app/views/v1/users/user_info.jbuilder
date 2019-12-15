@@ -3,7 +3,11 @@ json.body do
   json.first_name @user.first_name
   json.username @user.username
   json.follower @user.followers
-  json.photos @photos
-  json.likes @user.item_like_maps
+  json.photos do
+    json.array! @user.items.newest, partial: 'v1/items/item', as: :item
+  end
+  json.likes do
+    json.array! @user.like_items, partial: 'v1/items/item', as: :item
+  end
   json.collections @user.collections
 end

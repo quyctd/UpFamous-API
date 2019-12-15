@@ -14,21 +14,6 @@ module V1
     def user_info
       @user = User.where(username: params[:username]).first
       if @user
-        @photos = []
-        @user.items.each do |item|
-          photo = {
-            width: item.width,
-            height: item.height,
-            cloudinary_ver: item.cloudinary_ver,
-            cloudinary_id: item.cloudinary_id,
-            format: item.format,
-            user: item.user,
-            user_fullname: item.user.full_name,
-            likes: item.item_like_maps,
-            collections: item.collection_items
-          }
-          @photos.append(photo)
-        end
         render :user_info, status: :ok
       else
         head(:unprocessable_entity)
