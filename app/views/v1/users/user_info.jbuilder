@@ -9,5 +9,7 @@ json.body do
   json.likes do
     json.array! @user.like_items, partial: 'v1/items/item', as: :item
   end
-  json.collections @user.collections
+  json.collections do
+    json.array! @user.collections, partial: 'v1/collections/collection', as: :collection
+  end
 end
