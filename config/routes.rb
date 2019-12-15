@@ -14,5 +14,7 @@ Rails.application.routes.draw do
     get 'items/show/:item_id', to: 'items#show'
     post 'items/following', to: 'items#following'
     post 'items/like', to: 'items#like'
+    post 'collections/add', to: 'collections#add'
+    post 'collections/remove', to: 'collections#remove'
   end
 end

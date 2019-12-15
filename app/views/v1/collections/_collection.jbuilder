@@ -1,3 +1,4 @@
+json.id collection.id
 json.name collection.name
 json.describe collection.describe
 json.status collection.status
