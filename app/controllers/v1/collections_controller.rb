@@ -31,6 +31,7 @@ module V1
                                              collection_id: params[:collection_id])
       collection_item.deleted_flag = false
       if collection_item.save
+        build_clt_tags(collection_item.collection)
         user = User.find(params[:user_id])
         @collections = user.collections
         render :collections, status: :ok
@@ -61,7 +62,30 @@ module V1
       end
     end
 
+    def build_clt_tags(clt)
+      items = clt.items
+      return if items.empty?
+
+      item_tags = ItemTagMap.where(item_id: items.pluck(:id).uniq)
+      tag_ids = item_tags.pluck(:tag_id)
+      tag_hash = score(tag_ids)
+      tags = tag_hash.keys.take(3)
+
+      ActiveRecord::Base.transaction do
+        tags.each do |tag_id|
+          next unless CollectionTag.where(collection_id: clt.id, tag_id: tag_id).empty?
+          CollectionTag.create!(collection_id: clt.id, tag_id: tag_id)
+        end
+      end
+    end
+
     private
+
+    def score(array)
+      hash = Hash.new(0)
+      array.each{ |key| hash[key] += 1 }
+      hash.sort_by { |_key, value| value }.reverse!.to_h
+    end
 
     def collection_params
       params.require(:collection).permit(:name, :describe, :user_id, :status)

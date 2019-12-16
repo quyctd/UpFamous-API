@@ -43,7 +43,8 @@ module V1
 
     def create_item_tags(item_id, tags, tags_info)
       tags.each do |t_name|
-        tag = Tag.new(name: t_name)
+        tag = Tag.where(name: t_name).first
+        tag ||= Tag.new(name: t_name)
         tags_info.each do |t_info|
           tag.confidence = t_info[:confidence] if t_info[:tag] == t_name
           break

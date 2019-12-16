@@ -19,5 +19,6 @@ Rails.application.routes.draw do
     post 'collections/add', to: 'collections#add'
     post 'collections/remove', to: 'collections#remove'
     post 'collections/user', to: 'collections#user'
+    get 'items/search/:query', to: 'items#search'
   end
 end

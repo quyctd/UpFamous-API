@@ -52,5 +52,20 @@ module V1
         head(:unprocessable_entity)
       end
     end
+
+    def search
+      query = params[:query]
+
+      tags = Tag.where('name like ?', "%#{query}%")
+      tag_ids = tags.ids
+
+      item_tags = ItemTagMap.where(tag_id: tag_ids)
+      photo_from_tags = Item.where(id: item_tags.pluck(:item_id).uniq)
+      photo_from_description = Item.where('description like ?', "%#{query}%")
+
+      @photos = (photo_from_tags + photo_from_description).uniq
+
+      
+    end
   end
 end
