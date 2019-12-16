@@ -2,6 +2,11 @@
 
 module V1
   class CollectionsController < ApplicationController
+    def all
+      @collections = Collection.all.newest
+      render :all, status: :ok
+    end
+
     def create
       collection = Collection.new(collection_params)
       if collection.save

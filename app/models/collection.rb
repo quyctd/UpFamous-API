@@ -2,6 +2,8 @@ class Collection < ApplicationRecord
   has_many :collection_items
   belongs_to :user
 
+  scope :newest, -> { order('created_at DESC') }
+
   def feature_imgs
     items.take(3)
   end
