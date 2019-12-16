@@ -66,13 +66,15 @@ module V1
       @photos = (photo_from_tags + photo_from_description).uniq
 
       clt_tags = CollectionTag.where(tag_id: tag_ids)
-      clt_from_tags = Collection.where(id: clt_tags.pluck(:collection_id).uniq)
-      clt_from_attrs = Collection.where('describe like ? OR name like ?', "%#{query}%", "%#{query}%")
+      clt_from_tags = Collection.not_private.where(id: clt_tags.pluck(:collection_id).uniq)
+      clt_from_attrs = Collection.not_private.where('describe like ? OR name like ?', "%#{query}%", "%#{query}%")
 
       @collections = (clt_from_tags + clt_from_attrs).uniq
 
-      user_ids = (@photos.pluck(:user_id).uniq + @collections.pluck(:user_id).uniq).uniq
-      @users = User.where(id: user_ids)
+      @users = User.where('first_name like ? OR last_name like ? OR username like ?',
+                          "%#{query}%",
+                          "%#{query}%",
+                          "%#{query}%")
 
       render :search, status: :ok
     end

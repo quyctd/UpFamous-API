@@ -3,6 +3,7 @@ class Collection < ApplicationRecord
   belongs_to :user
 
   scope :newest, -> { order('created_at DESC') }
+  scope :not_private, -> { where(status: false) }
 
   def feature_imgs
     items.take(3)
