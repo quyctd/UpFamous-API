@@ -7,7 +7,7 @@ json.body do
     json.email @user.email
     json.authentication_token @user.authentication_token
     json.collections do
-      json.array! @user.collections, partial: 'v1/collections/collection', as: :collection
+      json.array! @user.collections, partial: 'v1/collections/collection', as: :clt
     end
   end
 end
