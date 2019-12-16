@@ -17,4 +17,8 @@ class Item < ApplicationRecord
   scope :vertical_photo, -> { where('width <= height') }
   scope :random, -> { order('RANDOM()') }
   scope :newest, -> { order('created_at DESC') }
+
+  def collection_ids
+    collection_items.pluck(:collection_id)
+  end
 end

@@ -7,6 +7,6 @@ json.format item.format
 json.user item.user
 json.user_fullname item.user.full_name
 json.likes item.item_like_maps
-json.collections item.collection_items
+json.collections item.collection_ids
 json.description item.description
 json.item_like_maps item.item_like_maps
