@@ -63,13 +63,13 @@ module V1
       photo_from_tags = Item.where(id: item_tags.pluck(:item_id).uniq)
       photo_from_description = Item.where('description like ?', "%#{query}%")
 
-      @photos = (photo_from_tags + photo_from_description).uniq
+      @photos = (photo_from_tags + photo_from_description).uniq.reverse!
 
       clt_tags = CollectionTag.where(tag_id: tag_ids)
       clt_from_tags = Collection.not_private.where(id: clt_tags.pluck(:collection_id).uniq)
       clt_from_attrs = Collection.not_private.where('describe like ? OR name like ?', "%#{query}%", "%#{query}%")
 
-      @collections = (clt_from_tags + clt_from_attrs).uniq
+      @collections = (clt_from_tags + clt_from_attrs).uniq.reverse!
 
       @users = User.where('first_name like ? OR last_name like ? OR username like ?',
                           "%#{query}%",
