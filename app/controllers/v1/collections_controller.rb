@@ -73,7 +73,10 @@ module V1
 
       ActiveRecord::Base.transaction do
         tags.each do |tag_id|
-          next unless CollectionTag.where(collection_id: clt.id, tag_id: tag_id).empty?
+          unless CollectionTag.where(collection_id: clt.id, tag_id: tag_id).empty?
+            next
+          end
+
           CollectionTag.create!(collection_id: clt.id, tag_id: tag_id)
         end
       end
