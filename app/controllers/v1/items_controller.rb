@@ -74,7 +74,9 @@ module V1
       @users = User.where('first_name like ? OR last_name like ? OR username like ?',
                           "%#{query}%",
                           "%#{query}%",
-                          "%#{query}%")
+                          "%#{query}%").newest
+
+      @recommends = Tag.shuffle.take(12)
 
       render :search, status: :ok
     end

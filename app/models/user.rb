@@ -27,6 +27,8 @@ class User < ApplicationRecord
   TYPE_INDIVIDUAL = 0
   TYPE_BRAND = 1
 
+  scope :newest, -> { order('created_at DESC') }
+
   def full_name
     [first_name, last_name].reject(&:blank?).join(' ').titleize
   end
@@ -38,5 +40,9 @@ class User < ApplicationRecord
   def like_items
     ids = item_like_maps.pluck(:item_id)
     Item.where(id: ids).newest
+  end
+
+  def feature_items
+    items.newest.take(3)
   end
 end
