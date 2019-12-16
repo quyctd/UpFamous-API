@@ -5,3 +5,7 @@ json.status collection.status
 json.feature_imgs collection.feature_imgs
 json.img_count collection.img_count
 json.item_ids collection.ids
+json.user do
+  json.username collection.user.username
+  json.fullname collection.user.full_name
+end

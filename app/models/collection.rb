@@ -1,5 +1,6 @@
 class Collection < ApplicationRecord
   has_many :collection_items
+  belongs_to :user
 
   def feature_imgs
     items.take(3)
