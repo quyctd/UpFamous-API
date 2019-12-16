@@ -52,6 +52,15 @@ module V1
       end
     end
 
+    def show
+      @clt = Collection.find(params[:id])
+      if @clt
+        render :show, status: :ok
+      else
+        head(:unprocessable_entity)
+      end
+    end
+
     private
 
     def collection_params

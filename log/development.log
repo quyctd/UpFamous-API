@@ -35069,3 +35069,1040 @@ Processing by V1::CollectionsController#all as HTML
 Completed 200 OK in 229ms (Views: 218.1ms | ActiveRecord: 10.7ms | Allocations: 45568)
 
 
+Started GET "/v1/items/all" for ::1 at 2019-12-16 20:11:29 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+Started GET "/v1/items/homepage" for ::1 at 2019-12-16 20:11:29 +0700
+  Rendering v1/items/endless_item.jbuilder
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 44.2ms | Allocations: 4440)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 32.2ms | Allocations: 4015)
+  Rendered v1/items/_item.jbuilder (Duration: 7.1ms | Allocations: 1489)
+Completed 200 OK in 54ms (Views: 49.2ms | ActiveRecord: 0.7ms | Allocations: 6194)
+
+
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 7.6ms | Allocations: 1489)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 9.7ms | Allocations: 1462)
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.3ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.3ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.3ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  Rendered v1/items/endless_item.jbuilder (Duration: 126.7ms | Allocations: 21945)
+Completed 200 OK in 129ms (Views: 125.3ms | ActiveRecord: 2.9ms | Allocations: 22471)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/soramac/Documents/HUST/Project3/UpFamous-API/config/environment.rb:5)
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:22:27 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  Rendered v1/collections/show.jbuilder (Duration: 3.8ms | Allocations: 2064)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.3ms | Allocations: 8085)
+
+
+  
+ActionView::Template::Error (undefined method `to_a' for #<Collection:0x00007f8a98cb59b0>
+Did you mean?  to_s):
+    1: json.body do
+    2:   json.partial! partial: 'collection', collection: @clt
+    3: end
+  
+app/views/v1/collections/show.jbuilder:2
+app/views/v1/collections/show.jbuilder:1
+app/controllers/v1/collections_controller.rb:58:in `show'
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/soramac/Documents/HUST/Project3/UpFamous-API/config/environment.rb:5)
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:24:29 +0700
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.6ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  Rendered v1/collections/show.jbuilder (Duration: 19.8ms | Allocations: 2524)
+Completed 500 Internal Server Error in 134ms (ActiveRecord: 8.8ms | Allocations: 10003)
+
+
+  
+ActionView::Template::Error (undefined method `to_a' for #<Collection:0x00007f8af94af390>
+Did you mean?  to_s):
+    1: json.body do
+    2:   json.partial! partial: 'collection', collection: @clt
+    3: end
+  
+app/views/v1/collections/show.jbuilder:2
+app/views/v1/collections/show.jbuilder:1
+app/controllers/v1/collections_controller.rb:58:in `show'
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:24:59 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  Rendered v1/collections/show.jbuilder (Duration: 7.6ms | Allocations: 2008)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms | Allocations: 3027)
+
+
+  
+ActionView::Template::Error (undefined method `to_a' for #<Collection:0x00007f8af96b5a90>
+Did you mean?  to_s):
+    1: json.partial! partial: 'collection', collection: @clt
+  
+app/views/v1/collections/show.jbuilder:1
+app/controllers/v1/collections_controller.rb:58:in `show'
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:28:04 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.6ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  Rendered v1/collections/show.jbuilder (Duration: 4.9ms | Allocations: 2009)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.6ms | Allocations: 2987)
+
+
+  
+ActionView::Template::Error (undefined method `to_a' for #<Collection:0x00007f8af8a4a850>
+Did you mean?  to_s):
+    1: json.partial! 'v1/collections/collection', collection: @clt
+  
+app/views/v1/collections/show.jbuilder:1
+app/controllers/v1/collections_controller.rb:58:in `show'
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:31:54 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (2.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 512.2ms | Allocations: 31224)
+  Rendered v1/collections/show.jbuilder (Duration: 514.0ms | Allocations: 31674)
+Completed 200 OK in 518ms (Views: 509.7ms | ActiveRecord: 6.7ms | Allocations: 32663)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:32:48 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.7ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (3.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 41.5ms | Allocations: 4961)
+  Rendered v1/collections/show.jbuilder (Duration: 46.0ms | Allocations: 5198)
+Completed 200 OK in 58ms (Views: 43.1ms | ActiveRecord: 5.5ms | Allocations: 5880)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/soramac/Documents/HUST/Project3/UpFamous-API/config/environment.rb:5)
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:34:56 +0700
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (1.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 416.2ms | Allocations: 28868)
+  Rendered v1/collections/show.jbuilder (Duration: 421.3ms | Allocations: 29440)
+Completed 200 OK in 476ms (Views: 422.8ms | ActiveRecord: 16.2ms | Allocations: 36928)
+
+
+Started GET "/v1/collections/" for ::1 at 2019-12-16 20:35:07 +0700
+Processing by V1::CollectionsController#all as HTML
+  Parameters: {"default"=>{"format"=>:json}, "collection"=>{}}
+  Rendering v1/collections/all.jbuilder
+  [1m[36mCollection Load (0.5ms)[0m  [1m[34mSELECT "collections".* FROM "collections" ORDER BY created_at DESC[0m
+  ↳ app/views/v1/collections/all.jbuilder:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 28.3ms | Allocations: 5124)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (3.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (20.1ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 257.2ms | Allocations: 14463)
+  Rendered v1/collections/all.jbuilder (Duration: 304.0ms | Allocations: 21151)
+Completed 200 OK in 309ms (Views: 280.1ms | ActiveRecord: 28.1ms | Allocations: 21522)
+
+
+Started GET "/v1/collections/" for ::1 at 2019-12-16 20:35:24 +0700
+Processing by V1::CollectionsController#all as HTML
+  Parameters: {"default"=>{"format"=>:json}, "collection"=>{}}
+  Rendering v1/collections/all.jbuilder
+  [1m[36mCollection Load (2.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" ORDER BY created_at DESC[0m
+  ↳ app/views/v1/collections/all.jbuilder:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 15.5ms | Allocations: 5036)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 42.7ms | Allocations: 5128)
+  Rendered v1/collections/all.jbuilder (Duration: 69.5ms | Allocations: 11524)
+Completed 200 OK in 72ms (Views: 66.0ms | ActiveRecord: 5.1ms | Allocations: 11757)
+
+
+Started GET "/v1/collections/" for ::1 at 2019-12-16 20:35:33 +0700
+Processing by V1::CollectionsController#all as HTML
+  Parameters: {"default"=>{"format"=>:json}, "collection"=>{}}
+  Rendering v1/collections/all.jbuilder
+  [1m[36mCollection Load (0.6ms)[0m  [1m[34mSELECT "collections".* FROM "collections" ORDER BY created_at DESC[0m
+  ↳ app/views/v1/collections/all.jbuilder:2
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (1.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 27.4ms | Allocations: 5036)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 45.0ms | Allocations: 5128)
+  Rendered v1/collections/all.jbuilder (Duration: 80.5ms | Allocations: 11524)
+Completed 200 OK in 83ms (Views: 75.2ms | ActiveRecord: 7.3ms | Allocations: 11756)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:35:38 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 32.5ms | Allocations: 4961)
+  Rendered v1/collections/show.jbuilder (Duration: 33.8ms | Allocations: 5198)
+Completed 200 OK in 40ms (Views: 30.5ms | ActiveRecord: 4.8ms | Allocations: 5880)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:35:56 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.3ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 79.0ms | Allocations: 4958)
+  Rendered v1/collections/show.jbuilder (Duration: 80.6ms | Allocations: 5194)
+Completed 200 OK in 98ms (Views: 87.1ms | ActiveRecord: 5.0ms | Allocations: 5860)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:36:32 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 47.9ms | Allocations: 4958)
+  Rendered v1/collections/show.jbuilder (Duration: 48.4ms | Allocations: 5194)
+Completed 200 OK in 52ms (Views: 46.6ms | ActiveRecord: 2.9ms | Allocations: 5860)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:38:58 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 48.8ms | Allocations: 4958)
+  Rendered v1/collections/show.jbuilder (Duration: 51.2ms | Allocations: 5194)
+Completed 200 OK in 59ms (Views: 51.1ms | ActiveRecord: 3.9ms | Allocations: 5860)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:39:20 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 91.9ms | Allocations: 4960)
+  Rendered v1/collections/show.jbuilder (Duration: 92.4ms | Allocations: 5196)
+Completed 200 OK in 96ms (Views: 89.8ms | ActiveRecord: 4.1ms | Allocations: 5863)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:40:20 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.5ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 29.7ms | Allocations: 4958)
+  Rendered v1/collections/show.jbuilder (Duration: 30.3ms | Allocations: 5194)
+Completed 200 OK in 34ms (Views: 28.5ms | ActiveRecord: 3.0ms | Allocations: 5860)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:40:41 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (1.0ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 36.6ms | Allocations: 4958)
+  Rendered v1/collections/show.jbuilder (Duration: 54.8ms | Allocations: 5194)
+Completed 200 OK in 104ms (Views: 54.9ms | ActiveRecord: 4.7ms | Allocations: 5860)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:40:58 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 58.9ms | Allocations: 4958)
+  Rendered v1/collections/show.jbuilder (Duration: 60.8ms | Allocations: 5194)
+Completed 200 OK in 71ms (Views: 61.5ms | ActiveRecord: 1.8ms | Allocations: 5860)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:41:13 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.5ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (1.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (1.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.7ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 28.5ms | Allocations: 4958)
+  Rendered v1/collections/show.jbuilder (Duration: 29.8ms | Allocations: 5194)
+Completed 200 OK in 33ms (Views: 25.2ms | ActiveRecord: 5.7ms | Allocations: 5860)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:41:42 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (1.7ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 53.7ms | Allocations: 4958)
+  Rendered v1/collections/show.jbuilder (Duration: 55.6ms | Allocations: 5194)
+Completed 200 OK in 82ms (Views: 60.8ms | ActiveRecord: 5.1ms | Allocations: 5860)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:42:11 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 184.5ms | Allocations: 4958)
+  Rendered v1/collections/show.jbuilder (Duration: 185.6ms | Allocations: 5194)
+Completed 200 OK in 195ms (Views: 186.4ms | ActiveRecord: 1.9ms | Allocations: 5860)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:42:32 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 28.3ms | Allocations: 4958)
+  Rendered v1/collections/show.jbuilder (Duration: 32.4ms | Allocations: 5194)
+Completed 200 OK in 41ms (Views: 32.0ms | ActiveRecord: 3.0ms | Allocations: 5860)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:43:45 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.4ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 32.2ms | Allocations: 4958)
+  Rendered v1/collections/show.jbuilder (Duration: 33.8ms | Allocations: 5194)
+Completed 200 OK in 38ms (Views: 31.3ms | ActiveRecord: 3.9ms | Allocations: 5860)
+
+
+Started GET "/v1/collections/3" for ::1 at 2019-12-16 20:44:05 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"3", "collection"=>{}}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (1.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 3], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 80.6ms | Allocations: 4958)
+  Rendered v1/collections/show.jbuilder (Duration: 81.6ms | Allocations: 5194)
+Completed 200 OK in 87ms (Views: 80.0ms | ActiveRecord: 4.2ms | Allocations: 5863)
+
+
+Started GET "/v1/collections/2" for ::1 at 2019-12-16 20:44:41 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"2", "collection"=>{}}
+  [1m[36mCollection Load (0.4ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 28.7ms | Allocations: 5054)
+  Rendered v1/collections/show.jbuilder (Duration: 30.9ms | Allocations: 5521)
+Completed 200 OK in 42ms (Views: 25.5ms | ActiveRecord: 6.9ms | Allocations: 6187)
+
+
+Started GET "/v1/collections/2" for ::1 at 2019-12-16 20:48:35 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"2", "collection"=>{}}
+  [1m[36mCollection Load (0.6ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 52.3ms | Allocations: 5193)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/views/v1/collections/show.jbuilder:6
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 43.1ms | Allocations: 4752)
+  [1m[36mItemLikeMap Load (1.6ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/collections/show.jbuilder:9
+  Rendered v1/collections/show.jbuilder (Duration: 201.0ms | Allocations: 18371)
+Completed 200 OK in 209ms (Views: 198.6ms | ActiveRecord: 7.5ms | Allocations: 19338)
+
+
+Started GET "/v1/collections/2" for ::1 at 2019-12-16 20:48:47 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"2", "collection"=>{}}
+  [1m[36mCollection Load (0.6ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 27.3ms | Allocations: 5110)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/views/v1/collections/show.jbuilder:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 15.6ms | Allocations: 1480)
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/collections/show.jbuilder:9
+  Rendered v1/collections/show.jbuilder (Duration: 70.9ms | Allocations: 10024)
+Completed 200 OK in 76ms (Views: 69.8ms | ActiveRecord: 3.1ms | Allocations: 10691)
+
+
+Started GET "/v1/collections/2" for ::1 at 2019-12-16 20:49:55 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"2", "collection"=>{}}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 148.1ms | Allocations: 5112)
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/views/v1/collections/show.jbuilder:6
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 130.5ms | Allocations: 1482)
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/collections/show.jbuilder:9
+  Rendered v1/collections/show.jbuilder (Duration: 313.5ms | Allocations: 10028)
+Completed 200 OK in 316ms (Views: 310.3ms | ActiveRecord: 4.1ms | Allocations: 10695)
+
+
+Started GET "/v1/collections/2" for ::1 at 2019-12-16 20:50:14 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"2", "collection"=>{}}
+  [1m[36mCollection Load (0.5ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 30.8ms | Allocations: 5110)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/views/v1/collections/show.jbuilder:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 6.2ms | Allocations: 1480)
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/collections/show.jbuilder:9
+  Rendered v1/collections/show.jbuilder (Duration: 68.3ms | Allocations: 10024)
+Completed 200 OK in 73ms (Views: 66.6ms | ActiveRecord: 3.4ms | Allocations: 10690)
+
+
+Started GET "/v1/collections/2" for ::1 at 2019-12-16 20:50:53 +0700
+Processing by V1::CollectionsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"2", "collection"=>{}}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:56:in `show'
+  Rendering v1/collections/show.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:17:in `ids'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/collections/_collection.jbuilder:9
+  Rendered v1/collections/_collection.jbuilder (Duration: 28.2ms | Allocations: 5110)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/views/v1/collections/show.jbuilder:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 47.5ms | Allocations: 1480)
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/collections/show.jbuilder:9
+  Rendered v1/collections/show.jbuilder (Duration: 88.6ms | Allocations: 10024)
+Completed 200 OK in 92ms (Views: 87.1ms | ActiveRecord: 2.6ms | Allocations: 10690)
+
+
+Started GET "/v1/items/show/4" for ::1 at 2019-12-16 20:51:02 +0700
+Processing by V1::ItemsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item_id"=>"4", "item"=>{}}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:13:in `show'
+  Rendering v1/items/show.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 9.1ms | Allocations: 1563)
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/items/show.jbuilder:3
+  Rendered v1/items/show.jbuilder (Duration: 16.0ms | Allocations: 3217)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 1.1ms | Allocations: 4299)
+
+
+Started POST "/v1/collections/user" for ::1 at 2019-12-16 20:51:09 +0700
+Processing by V1::CollectionsController#user as HTML
+  Parameters: {"user_id"=>3, "default"=>{"format"=>:json}, "collection"=>{"user_id"=>3}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:22:in `user'
+  Rendering v1/collections/collections.jbuilder
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/v1/collections/collections.jbuilder:1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:17:in `ids'
+  Rendered v1/collections/_collection.jbuilder (Duration: 26.9ms | Allocations: 4449)
+  Rendered v1/collections/collections.jbuilder (Duration: 34.8ms | Allocations: 5964)
+Completed 200 OK in 41ms (Views: 34.1ms | ActiveRecord: 3.1ms | Allocations: 6939)
+
+
+Started POST "/v1/collections/user" for ::1 at 2019-12-16 20:51:15 +0700
+Processing by V1::CollectionsController#user as HTML
+  Parameters: {"user_id"=>3, "default"=>{"format"=>:json}, "collection"=>{"user_id"=>3}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:22:in `user'
+  Rendering v1/collections/collections.jbuilder
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/v1/collections/collections.jbuilder:1
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (1.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:17:in `ids'
+  Rendered v1/collections/_collection.jbuilder (Duration: 28.1ms | Allocations: 4364)
+  Rendered v1/collections/collections.jbuilder (Duration: 30.9ms | Allocations: 5543)
+Completed 200 OK in 37ms (Views: 28.5ms | ActiveRecord: 4.0ms | Allocations: 6233)
+
+
+Started POST "/v1/collections/user" for ::1 at 2019-12-16 20:51:30 +0700
+Processing by V1::CollectionsController#user as HTML
+  Parameters: {"user_id"=>3, "default"=>{"format"=>:json}, "collection"=>{"user_id"=>3}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:22:in `user'
+  Rendering v1/collections/collections.jbuilder
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/v1/collections/collections.jbuilder:1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:17:in `ids'
+  Rendered v1/collections/_collection.jbuilder (Duration: 44.7ms | Allocations: 4366)
+  Rendered v1/collections/collections.jbuilder (Duration: 50.2ms | Allocations: 5545)
+Completed 200 OK in 52ms (Views: 49.1ms | ActiveRecord: 1.8ms | Allocations: 6235)
+
+
+Started POST "/v1/collections/user" for ::1 at 2019-12-16 20:51:39 +0700
+Processing by V1::CollectionsController#user as HTML
+  Parameters: {"user_id"=>3, "default"=>{"format"=>:json}, "collection"=>{"user_id"=>3}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/collections_controller.rb:22:in `user'
+  Rendering v1/collections/collections.jbuilder
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/v1/collections/collections.jbuilder:1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:8:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:21:in `img_count'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:12:in `items'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:17:in `ids'
+  Rendered v1/collections/_collection.jbuilder (Duration: 28.4ms | Allocations: 4364)
+  Rendered v1/collections/collections.jbuilder (Duration: 33.7ms | Allocations: 5543)
+Completed 200 OK in 36ms (Views: 31.2ms | ActiveRecord: 3.5ms | Allocations: 6232)
+
+

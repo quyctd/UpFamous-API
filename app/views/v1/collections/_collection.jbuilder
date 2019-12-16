@@ -1,11 +1,11 @@
-json.id collection.id
-json.name collection.name
-json.describe collection.describe
-json.status collection.status
-json.feature_imgs collection.feature_imgs
-json.img_count collection.img_count
-json.item_ids collection.ids
+json.id clt.id
+json.name clt.name
+json.describe clt.describe
+json.status clt.status
+json.feature_imgs clt.feature_imgs
+json.img_count clt.img_count
+json.item_ids clt.ids
 json.user do
-  json.username collection.user.username
-  json.fullname collection.user.full_name
+  json.username clt.user.username
+  json.fullname clt.user.full_name
 end

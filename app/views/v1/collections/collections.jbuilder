@@ -1,1 +1,1 @@
-json.array! @collections, partial: 'collection', as: :collection
+json.array! @collections, partial: 'collection', as: :clt

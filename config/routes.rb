@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     post 'items/following', to: 'items#following'
     post 'items/like', to: 'items#like'
     get 'collections', to: 'collections#all'
+    get 'collections/:id', to: 'collections#show'
     post 'collections/add', to: 'collections#add'
     post 'collections/remove', to: 'collections#remove'
     post 'collections/user', to: 'collections#user'
