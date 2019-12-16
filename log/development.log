@@ -38549,3 +38549,199 @@ Processing by V1::ItemsController#search as HTML
 Completed 200 OK in 53ms (Views: 15.7ms | ActiveRecord: 4.8ms | Allocations: 9839)
 
 
+Started GET "/v1/items/search/Dev" for ::1 at 2019-12-16 23:10:11 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#search as HTML
+  Parameters: {"default"=>{"format"=>:json}, "query"=>"Dev", "item"=>{}}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 4.9ms | Allocations: 800)
+
+
+  
+ArgumentError (You tried to define a scope named "shuffle" on the model "Tag", but ActiveRecord::Relation already defined an instance method with the same name.):
+  
+app/models/tag.rb:4:in `<class:Tag>'
+app/models/tag.rb:1:in `<main>'
+app/controllers/v1/items_controller.rb:59:in `search'
+Started GET "/v1/items/search/Dev" for ::1 at 2019-12-16 23:11:00 +0700
+Processing by V1::ItemsController#search as HTML
+  Parameters: {"default"=>{"format"=>:json}, "query"=>"Dev", "item"=>{}}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" WHERE (name like '%Dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:60:in `search'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "item_tag_maps"."item_id" FROM "item_tag_maps" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:63:in `search'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (description like '%Dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "collection_tags"."collection_id" FROM "collection_tags" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:69:in `search'
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND 1=0[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND (describe like '%Dev%' OR name like '%Dev%')[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 6.0ms | Allocations: 12560)
+
+
+  
+NoMethodError (undefined method `shuffle' for #<Class:0x00007fc7a8333c50>):
+  
+app/controllers/v1/items_controller.rb:79:in `search'
+Started GET "/v1/items/search/Dev" for ::1 at 2019-12-16 23:11:05 +0700
+Processing by V1::ItemsController#search as HTML
+  Parameters: {"default"=>{"format"=>:json}, "query"=>"Dev", "item"=>{}}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" WHERE (name like '%Dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:60:in `search'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "item_tag_maps"."item_id" FROM "item_tag_maps" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:63:in `search'
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (description like '%Dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "collection_tags"."collection_id" FROM "collection_tags" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:69:in `search'
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND 1=0[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND (describe like '%Dev%' OR name like '%Dev%')[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 3.0ms | Allocations: 6522)
+
+
+  
+NoMethodError (undefined method `shuffle' for #<Class:0x00007fc7a8333c50>):
+  
+app/controllers/v1/items_controller.rb:79:in `search'
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/soramac/Documents/HUST/Project3/UpFamous-API/config/environment.rb:5)
+Started GET "/v1/items/search/Dev" for ::1 at 2019-12-16 23:11:54 +0700
+  [1m[35m (12.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::ItemsController#search as HTML
+  Parameters: {"default"=>{"format"=>:json}, "query"=>"Dev", "item"=>{}}
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.7ms | Allocations: 813)
+
+
+  
+ArgumentError (You tried to define a scope named "shuffle" on the model "Tag", but ActiveRecord::Relation already defined an instance method with the same name.):
+  
+app/models/tag.rb:4:in `<class:Tag>'
+app/models/tag.rb:1:in `<main>'
+app/controllers/v1/items_controller.rb:59:in `search'
+Started GET "/v1/items/search/Dev" for ::1 at 2019-12-16 23:12:50 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#search as HTML
+  Parameters: {"default"=>{"format"=>:json}, "query"=>"Dev", "item"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" WHERE (name like '%Dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:60:in `search'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_tag_maps"."item_id" FROM "item_tag_maps" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:63:in `search'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[36mItem Load (2.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (description like '%Dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_tags"."collection_id" FROM "collection_tags" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:69:in `search'
+  [1m[36mCollection Load (0.4ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND 1=0[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND (describe like '%Dev%' OR name like '%Dev%')[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mTag Load (45.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 12]]
+  ↳ app/controllers/v1/items_controller.rb:79:in `search'
+  Rendering v1/items/search.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (first_name like '%Dev%' OR last_name like '%Dev%' OR username like '%Dev%')[0m
+  ↳ app/views/v1/items/search.jbuilder:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (first_name like '%Dev%' OR last_name like '%Dev%' OR username like '%Dev%') ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/search.jbuilder:13
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 3], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  Rendered v1/users/_user.jbuilder (Duration: 50.9ms | Allocations: 12350)
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 2], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  Rendered v1/users/_user.jbuilder (Duration: 3.5ms | Allocations: 931)
+  [1m[36mItem Load (4.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  Rendered v1/users/_user.jbuilder (Duration: 15.6ms | Allocations: 934)
+  Rendered v1/items/search.jbuilder (Duration: 170.4ms | Allocations: 33787)
+Completed 200 OK in 389ms (Views: 253.1ms | ActiveRecord: 60.1ms | Allocations: 47201)
+
+
+Started GET "/v1/items/search/female" for ::1 at 2019-12-16 23:13:00 +0700
+Processing by V1::ItemsController#search as HTML
+  Parameters: {"default"=>{"format"=>:json}, "query"=>"female", "item"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" WHERE (name like '%female%')[0m
+  ↳ app/controllers/v1/items_controller.rb:60:in `search'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "item_tag_maps"."item_id" FROM "item_tag_maps" WHERE "item_tag_maps"."tag_id" = ?[0m  [["tag_id", 3]]
+  ↳ app/controllers/v1/items_controller.rb:63:in `search'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (description like '%female%')[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_tags"."collection_id" FROM "collection_tags" WHERE "collection_tags"."tag_id" = ?[0m  [["tag_id", 3]]
+  ↳ app/controllers/v1/items_controller.rb:69:in `search'
+  [1m[36mCollection Load (0.4ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND 1=0[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mCollection Load (0.6ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND (describe like '%female%' OR name like '%female%')[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 12]]
+  ↳ app/controllers/v1/items_controller.rb:79:in `search'
+  Rendering v1/items/search.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (first_name like '%female%' OR last_name like '%female%' OR username like '%female%')[0m
+  ↳ app/views/v1/items/search.jbuilder:4
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 57.7ms | Allocations: 3622)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (first_name like '%female%' OR last_name like '%female%' OR username like '%female%') ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/search.jbuilder:13
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/items/search.jbuilder:17
+  Rendered v1/items/search.jbuilder (Duration: 92.2ms | Allocations: 8427)
+Completed 200 OK in 126ms (Views: 89.6ms | ActiveRecord: 8.4ms | Allocations: 13650)
+
+
+Started GET "/v1/items/search/face" for ::1 at 2019-12-16 23:13:09 +0700
+Processing by V1::ItemsController#search as HTML
+  Parameters: {"default"=>{"format"=>:json}, "query"=>"face", "item"=>{}}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" WHERE (name like '%face%')[0m
+  ↳ app/controllers/v1/items_controller.rb:60:in `search'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "item_tag_maps"."item_id" FROM "item_tag_maps" WHERE "item_tag_maps"."tag_id" = ?[0m  [["tag_id", 2]]
+  ↳ app/controllers/v1/items_controller.rb:63:in `search'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (description like '%face%')[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_tags"."collection_id" FROM "collection_tags" WHERE "collection_tags"."tag_id" = ?[0m  [["tag_id", 2]]
+  ↳ app/controllers/v1/items_controller.rb:69:in `search'
+  [1m[36mCollection Load (1.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND 1=0[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mCollection Load (2.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND (describe like '%face%' OR name like '%face%')[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 12]]
+  ↳ app/controllers/v1/items_controller.rb:79:in `search'
+  Rendering v1/items/search.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (first_name like '%face%' OR last_name like '%face%' OR username like '%face%')[0m
+  ↳ app/views/v1/items/search.jbuilder:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 4.7ms | Allocations: 1537)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (first_name like '%face%' OR last_name like '%face%' OR username like '%face%') ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/search.jbuilder:13
+  [1m[36mItemLikeMap Load (0.8ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/items/search.jbuilder:17
+  Rendered v1/items/search.jbuilder (Duration: 25.2ms | Allocations: 5711)
+Completed 200 OK in 57ms (Views: 23.9ms | ActiveRecord: 8.2ms | Allocations: 10866)
+
+

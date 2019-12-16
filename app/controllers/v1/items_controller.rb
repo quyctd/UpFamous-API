@@ -76,7 +76,7 @@ module V1
                           "%#{query}%",
                           "%#{query}%").newest
 
-      @recommends = Tag.shuffle.take(12)
+      @recommends = Tag.random.take(12)
 
       render :search, status: :ok
     end
