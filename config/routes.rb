@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     post 'items/like', to: 'items#like'
     post 'collections/add', to: 'collections#add'
     post 'collections/remove', to: 'collections#remove'
+    post 'collections/user', to: 'collections#user'
   end
 end
