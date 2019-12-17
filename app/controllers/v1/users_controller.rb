@@ -44,9 +44,9 @@ module V1
 
     def update_account
       @user = User.where(authentication_token: params[:token]).first
-      if @user
-        @user.update(update_params)
-        head(:ok)
+      if @user && @user.update(update_params)
+        @user.reload
+        render :account_info, status: :ok
       else
         head(:unprocessable_entity)
       end
@@ -54,9 +54,9 @@ module V1
 
     def update_ava
       @user = User.where(authentication_token: params[:token]).first
-      if @user
-        @user.update(update_ava_params)
-        head(:ok)
+      if @user && @user.update(update_ava_params)
+        @user.reload
+        render :account_info, status: :ok
       else
         head(:unprocessable_entity)
       end

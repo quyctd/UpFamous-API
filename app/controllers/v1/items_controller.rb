@@ -46,7 +46,7 @@ module V1
         item_like.liked_flag = !item_like.liked_flag
         item_like_count.likes += item_like.liked_flag == true ? 1 : -1
       else
-        ItemLikeMap.create!(item_id: @item.id, user_id: user.id, like_time: DateTime.now)
+        item_like = ItemLikeMap.create!(item_id: @item.id, user_id: user.id, like_time: DateTime.now)
         item_like_count.likes += 1
       end
 

@@ -7,4 +7,8 @@ json.body do
   json.bio @user.bio
   json.avatar @user.avatar
   json.tags @user.tags
+  json.id @user.id
+  json.collections do
+    json.array! @user.collections, partial: 'v1/collections/collection', as: :clt
+  end
 end
