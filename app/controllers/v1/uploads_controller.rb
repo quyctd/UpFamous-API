@@ -44,13 +44,12 @@ module V1
 
     def create_item_tags(item_id, tags, tags_info)
       tags.each do |t_name|
-        tag = Tag.where(name: t_name).first
-        tag ||= Tag.new(name: t_name)
+        tag = Tag.find_or_create_by(name: t_name)
         tags_info.each do |t_info|
           tag.confidence = t_info[:confidence] if t_info[:tag] == t_name
           break
         end
-        tag.save!
+        tag.save
         # Create item tag map
         ItemTagMap.create(item_id: item_id, tag_id: tag.id)
       end

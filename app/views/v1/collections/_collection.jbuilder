@@ -8,5 +8,6 @@ json.item_ids clt.ids
 json.user do
   json.username clt.user.username
   json.fullname clt.user.full_name
+  json.avatar clt.user.avatar
 end
 json.tags clt.tags

@@ -4,6 +4,8 @@ json.body do
   json.username @user.username
   json.follower @user.active_follower
   json.avatar @user.avatar
+  json.tags @user.tags
+  json.location @user.location
   json.photos do
     json.array! @user.items.newest, partial: 'v1/items/item', as: :item
   end
