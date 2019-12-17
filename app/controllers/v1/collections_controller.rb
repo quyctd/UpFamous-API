@@ -45,6 +45,7 @@ module V1
                                              collection_id: params[:collection_id]).first
       collection_item.deleted_flag = true
       if collection_item.save
+        build_clt_tags(collection_item.collection)
         user = User.find(params[:user_id])
         @collections = user.collections
         render :collections, status: :ok
@@ -72,11 +73,8 @@ module V1
       tags = tag_hash.keys.take(3)
 
       ActiveRecord::Base.transaction do
+        CollectionTag.where(collection_id: clt.id).destroy_all
         tags.each do |tag_id|
-          unless CollectionTag.where(collection_id: clt.id, tag_id: tag_id).empty?
-            next
-          end
-
           CollectionTag.create!(collection_id: clt.id, tag_id: tag_id)
         end
       end

@@ -48373,3 +48373,154 @@ Processing by V1::UsersController#user_info as HTML
 Completed 200 OK in 334ms (Views: 169.1ms | ActiveRecord: 144.6ms | Allocations: 32736)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/quydc/Documents/personal/UpFamous-API/config/environment.rb:5)
+Started GET "/v1/items/all" for ::1 at 2019-12-17 17:31:41 +0700
+Started GET "/v1/items/homepage" for ::1 at 2019-12-17 17:31:41 +0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::ItemsController#endless_item as HTML
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:8
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 40.8ms | Allocations: 20698)
+Completed 200 OK in 107ms (Views: 55.5ms | ActiveRecord: 1.0ms | Allocations: 36523)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 91.0ms | Allocations: 28131)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 11.0ms | Allocations: 1498)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 16.8ms | Allocations: 1497)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 7.2ms | Allocations: 1497)
+  [1m[36mItemLikeMap Load (0.3ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.1ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.9ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  Rendered v1/items/endless_item.jbuilder (Duration: 177.2ms | Allocations: 43922)
+Completed 200 OK in 235ms (Views: 229.1ms | ActiveRecord: 6.0ms | Allocations: 56489)
+
+
+Started POST "/v1/sessions" for ::1 at 2019-12-17 17:32:02 +0700
+Processing by V1::SessionsController#create as HTML
+  Parameters: {"email"=>"dev3@dev.com", "password"=>"[FILTERED]", "default"=>{"format"=>:json}, "session"=>{"email"=>"dev3@dev.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "dev3@dev.com"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/sessions_controller.rb:6:in `create'
+  Rendering v1/sessions/create.jbuilder
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/v1/sessions/create.jbuilder:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:9:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:22:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:18:in `ids'
+  Rendered v1/collections/_collection.jbuilder (Duration: 8.8ms | Allocations: 4698)
+  Rendered v1/sessions/create.jbuilder (Duration: 51.6ms | Allocations: 17230)
+Completed 201 Created in 183ms (Views: 50.7ms | ActiveRecord: 2.0ms | Allocations: 19795)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-17 17:32:03 +0700
+Started GET "/v1/items/homepage" for ::1 at 2019-12-17 17:32:03 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[36mItem Load (10.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  ↳ app/views/v1/items/_item.jbuilder:8
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 4.0ms | Allocations: 1692)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+Completed 200 OK in 19ms (Views: 6.3ms | ActiveRecord: 10.6ms | Allocations: 3411)
+
+
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 4.7ms | Allocations: 2447)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 3.4ms | Allocations: 1497)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 6.4ms | Allocations: 1497)
+  [1m[36mCACHE User Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 14.9ms | Allocations: 1497)
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.1ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.7ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  Rendered v1/items/endless_item.jbuilder (Duration: 73.8ms | Allocations: 15683)
+Completed 200 OK in 75ms (Views: 71.3ms | ActiveRecord: 3.4ms | Allocations: 15909)
+
+
+Started POST "/v1/users/account" for ::1 at 2019-12-17 17:36:06 +0700
+Processing by V1::UsersController#account_info as HTML
+  Parameters: {"token"=>"s6b1ywXfpTAEjNB-aQCH", "default"=>{"format"=>:json}, "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:37:in `account_info'
+  Rendering v1/users/account_info.jbuilder
+  Rendered v1/users/account_info.jbuilder (Duration: 3.3ms | Allocations: 261)
+Completed 200 OK in 18ms (Views: 5.7ms | ActiveRecord: 0.5ms | Allocations: 1468)
+
+
