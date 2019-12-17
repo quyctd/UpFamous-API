@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resources :collections, only: [:create]
     resources :uploads, only: [:create]
     get '/users/:username', to: 'users#user_info'
+    post '/users/account', to: 'users#account_info'
+    post '/users/account/update_ava', to: 'users#update_ava'
+    post '/users/account/update', to: 'users#update_account'
     get 'items/homepage', to: 'items#homepage_thumbnail'
     get 'items/all', to: 'items#endless_item'
     get 'join_photo', to: 'users#join_photo'

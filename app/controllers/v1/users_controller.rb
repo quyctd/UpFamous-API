@@ -29,7 +29,44 @@ module V1
       end
     end
 
+    def account_info
+      @user = User.where(authentication_token: params[:token]).first
+      if @user
+        render :account_info, status: :ok
+      else
+        head(:unprocessable_entity)
+      end
+    end
+
+    def update_account
+      @user = User.where(authentication_token: params[:token]).first
+      if @user
+        @user.update(update_params)
+        head(:ok)
+      else
+        head(:unprocessable_entity)
+      end
+    end
+
+    def update_ava
+      @user = User.where(authentication_token: params[:token]).first
+      if @user
+        @user.update(update_ava_params)
+        head(:ok)
+      else
+        head(:unprocessable_entity)
+      end
+    end
+
     private
+
+    def update_ava_params
+      params.permit(:avatar)
+    end
+
+    def update_params
+      params.permit(:username, :first_name, :last_name, :email, :location, :bio)
+    end
 
     def user_params
       params.permit(:email, :first_name, :last_name, :username, :password)

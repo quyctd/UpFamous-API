@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_09_141002) do
+ActiveRecord::Schema.define(version: 2019_12_17_013633) do
 
   create_table "collection_items", force: :cascade do |t|
     t.integer "collection_id"
@@ -187,6 +187,9 @@ ActiveRecord::Schema.define(version: 2019_12_09_141002) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "authentication_token", limit: 30
+    t.string "avatar", default: "https://res.cloudinary.com/flask-image/image/upload/v1576546201/Upfamous/undefined_ava.jpg"
+    t.string "location", default: ""
+    t.text "bio", default: ""
     t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
