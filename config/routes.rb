@@ -24,5 +24,6 @@ Rails.application.routes.draw do
     post 'collections/user', to: 'collections#user'
     get 'items/search/:query', to: 'items#search'
     post '/users/follow/:id/:username', to: 'users#follow'
+    post 'items/download/:item_id', to: 'items#download'
   end
 end

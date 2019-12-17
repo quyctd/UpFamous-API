@@ -13,6 +13,9 @@ module V1
       @item = Item.find(params[:item_id])
       @exif = ItemExif.where(item_id: params[:item_id]).first
       if @item
+        item_view = ItemViewCount.where(item_id: @item.id).first
+        item_view.views += 1
+        item_view.save!
         render :show, status: :ok
       else
         head(:unprocessable_entity)
@@ -80,6 +83,13 @@ module V1
       @recommends = Tag.random.take(12)
 
       render :search, status: :ok
+    end
+
+    def download
+      @item = Item.find(params[:item_id])
+      item_download = @item.item_download_count
+      item_download.downloads += 1
+      item_download.save!
     end
   end
 end
