@@ -11,6 +11,6 @@ json.body do
     json.array! @user.like_items, partial: 'v1/items/item', as: :item
   end
   json.collections do
-    json.array! @user.collections, partial: 'v1/collections/collection', as: :clt
+    json.array! @collections, partial: 'v1/collections/collection', as: :clt
   end
 end

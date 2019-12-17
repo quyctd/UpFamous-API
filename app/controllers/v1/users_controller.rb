@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module V1
   class UsersController < ApplicationController
     def create
@@ -13,6 +15,8 @@ module V1
 
     def user_info
       @user = User.where(username: params[:username]).first
+      send_user = User.where(authentication_token: params[:token]).first
+      @collections = (send_user && send_user.id == @user.id) ? @user.collections : @user.collections.not_private
       if @user
         render :user_info, status: :ok
       else

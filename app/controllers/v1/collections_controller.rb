@@ -3,7 +3,7 @@
 module V1
   class CollectionsController < ApplicationController
     def all
-      @collections = Collection.all.newest
+      @collections = Collection.not_private.all.newest
       render :all, status: :ok
     end
 

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :users, only: %i[create]
     resources :collections, only: [:create]
     resources :uploads, only: [:create]
-    get '/users/:username', to: 'users#user_info'
+    get '/users/:username/:token', to: 'users#user_info'
     post '/users/account', to: 'users#account_info'
     post '/users/account/update_ava', to: 'users#update_ava'
     post '/users/account/update', to: 'users#update_account'
