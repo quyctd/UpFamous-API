@@ -9,3 +9,4 @@ json.user do
   json.username clt.user.username
   json.fullname clt.user.full_name
 end
+json.tags clt.tags
