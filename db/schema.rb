@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_17_013633) do
+ActiveRecord::Schema.define(version: 2019_12_17_110905) do
 
   create_table "collection_items", force: :cascade do |t|
     t.integer "collection_id"
@@ -159,6 +159,13 @@ ActiveRecord::Schema.define(version: 2019_12_17_013633) do
     t.boolean "follow_flag"
     t.datetime "following_time"
     t.datetime "unfollow_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_tags", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "tag_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

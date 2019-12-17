@@ -15,6 +15,7 @@ class User < ApplicationRecord
 
   has_many :item_like_maps
   has_many :collections
+  has_many :user_tags
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -28,6 +29,10 @@ class User < ApplicationRecord
   TYPE_BRAND = 1
 
   scope :newest, -> { order('created_at DESC') }
+
+  def tags
+    Tag.where(id: user_tags.pluck(:tag_id))
+  end
 
   def full_name
     [first_name, last_name].reject(&:blank?).join(' ').titleize

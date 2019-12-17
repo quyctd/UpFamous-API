@@ -6,4 +6,5 @@ json.body do
   json.location @user.location
   json.bio @user.bio
   json.avatar @user.avatar
+  json.tags @user.tags
 end
