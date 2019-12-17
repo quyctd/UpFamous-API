@@ -11,8 +11,7 @@ module V1
 
     def show
       @item = Item.find(params[:item_id])
-      results = Cloudinary::Api.resource(@item.cloudinary_id, image_metadata: true)
-      @exif = results['image_metadata']
+      @exif = ItemExif.where(item_id: params[:item_id]).first
       if @item
         render :show, status: :ok
       else

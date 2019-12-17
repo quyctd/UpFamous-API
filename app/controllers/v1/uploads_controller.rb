@@ -21,9 +21,9 @@ module V1
                                                 auto_tagging: 0.7)
             tags = tag_result['tags']
             tags_info = tag_result['info']['categorization']['aws_rek_tagging']['data']
-            puts "TAG INFO: #{tags_info}"
             create_item_count(item.id)
             create_item_tags(item.id, tags, tags_info)
+            build_item_exif(item)
             @items.append(item)
           else
             puts item.errors.full_messages
@@ -36,10 +36,22 @@ module V1
       end
     end
 
-    def build_item_exif
-      results = Cloudinary::Api.resource(@item.cloudinary_id, image_metadata: true)
+    def build_item_exif(item)
+      results = Cloudinary::Api.resource(item.cloudinary_id, image_metadata: true)
       exif = results['image_metadata']
-      item_exif = ItemExif.new()
+      item_exif = ItemExif.new(item_id: item.id)
+      item_exif.camera_maker = exif['Make'] ? exif['Make'] : '--'
+      item_exif.camera_model = exif['Model'] ? exif['Model'] : '--'
+      item_exif.iso = exif['ISOSpeedRatings'] ? exif['ISOSpeedRatings'] : '--'
+      item_exif.focus_length = exif['FocalLength'] ? exif['FocalLength'] : '--'
+      item_exif.aperture = exif['ApertureValue'] ? exif['ApertureValue'] : '--'
+      item_exif.shutter_speed = exif['ShutterSpeedValue'] ? exif['ShutterSpeedValue'] : '--'
+      if item_exif.save
+        puts "Created item exif for item #{item.id}"
+      else
+        puts item_exif.errors.full_messages
+        head(:unprocessable_entity)
+      end
     end
 
     def create_item_count(item_id)
