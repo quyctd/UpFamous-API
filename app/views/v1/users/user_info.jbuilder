@@ -3,6 +3,7 @@ json.body do
   json.first_name @user.first_name
   json.username @user.username
   json.follower @user.followers
+  json.avatar @user.avatar
   json.photos do
     json.array! @user.items.newest, partial: 'v1/items/item', as: :item
   end
