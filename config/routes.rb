@@ -23,5 +23,6 @@ Rails.application.routes.draw do
     post 'collections/remove', to: 'collections#remove'
     post 'collections/user', to: 'collections#user'
     get 'items/search/:query', to: 'items#search'
+    post '/users/follow/:id/:username', to: 'users#follow'
   end
 end

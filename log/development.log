@@ -45048,3 +45048,1617 @@ Processing by V1::UsersController#user_info as HTML
 Completed 200 OK in 143ms (Views: 115.3ms | ActiveRecord: 16.9ms | Allocations: 22478)
 
 
+Started GET "/v1/users/dev3/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 09:31:47 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev3", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev3"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[36mItem Load (4.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 2.0ms | Allocations: 836)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 1.4ms | Allocations: 833)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 1.9ms | Allocations: 833)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 1.5ms | Allocations: 833)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 4.8ms | Allocations: 1510)
+  [1m[36mCollection Load (0.4ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:9:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[36mCACHE Item Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:22:in `img_count'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:18:in `ids'
+  Rendered v1/collections/_collection.jbuilder (Duration: 15.4ms | Allocations: 4376)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.5ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.5ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mCACHE ItemLikeMap Load (0.0ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 96.6ms | Allocations: 20923)
+Completed 200 OK in 108ms (Views: 89.4ms | ActiveRecord: 9.5ms | Allocations: 22480)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 09:31:53 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (2.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (1.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 19.0ms | Allocations: 4267)
+Completed 200 OK in 38ms (Views: 16.1ms | ActiveRecord: 5.3ms | Allocations: 5991)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 09:34:12 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 15.1ms | Allocations: 4243)
+Completed 200 OK in 26ms (Views: 14.0ms | ActiveRecord: 3.0ms | Allocations: 5966)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/soramac/Documents/HUST/Project3/UpFamous-API/config/environment.rb:5)
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 09:37:01 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 27.9ms | Allocations: 11696)
+Completed 200 OK in 130ms (Views: 26.7ms | ActiveRecord: 10.3ms | Allocations: 30380)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 09:37:38 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 11.8ms | Allocations: 4243)
+Completed 200 OK in 19ms (Views: 10.7ms | ActiveRecord: 2.3ms | Allocations: 5969)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 09:38:05 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 16.5ms | Allocations: 4243)
+Completed 200 OK in 30ms (Views: 15.4ms | ActiveRecord: 2.7ms | Allocations: 5966)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 09:38:36 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 31.8ms | Allocations: 4243)
+Completed 200 OK in 60ms (Views: 31.8ms | ActiveRecord: 1.7ms | Allocations: 5966)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/soramac/Documents/HUST/Project3/UpFamous-API/config/environment.rb:5)
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 09:50:25 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 90.2ms | Allocations: 11021)
+Completed 200 OK in 255ms (Views: 87.9ms | ActiveRecord: 5.1ms | Allocations: 29381)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 09:51:16 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 30.2ms | Allocations: 4243)
+Completed 200 OK in 44ms (Views: 29.1ms | ActiveRecord: 3.2ms | Allocations: 5967)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 09:51:26 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 93.0ms | Allocations: 4243)
+Completed 200 OK in 109ms (Views: 92.9ms | ActiveRecord: 2.2ms | Allocations: 5966)
+
+
+Started POST "/v1/users/follow/3/dev2" for ::1 at 2019-12-17 09:51:35 +0700
+Processing by V1::UsersController#follow as HTML
+  Parameters: {"headers"=>{"normalizedNames"=>{}, "lazyUpdate"=>nil, "lazyInit"=>nil, "headers"=>{}}, "default"=>{"format"=>:json}, "id"=>"3", "username"=>"dev2", "user"=>{}}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:66:in `follow'
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:67:in `follow'
+  [1m[36mUserFollowing Load (0.2ms)[0m  [1m[34mSELECT "user_followings".* FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? ORDER BY "user_followings"."id" ASC LIMIT ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:68:in `follow'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  [1m[36mUserFollowing Create (0.5ms)[0m  [1m[32mINSERT INTO "user_followings" ("source_user_id", "target_user_id", "follow_flag", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1], ["created_at", "2019-12-17 02:51:35.780742"], ["updated_at", "2019-12-17 02:51:35.780742"]]
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  Rendering v1/users/follow.jbuilder
+  Rendered v1/users/follow.jbuilder (Duration: 1.0ms | Allocations: 93)
+Completed 200 OK in 56ms (Views: 7.3ms | ActiveRecord: 10.7ms | Allocations: 11704)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 09:52:12 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 19.4ms | Allocations: 4560)
+Completed 200 OK in 35ms (Views: 20.0ms | ActiveRecord: 2.6ms | Allocations: 6284)
+
+
+Started GET "/v1/users/dev1/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 09:52:18 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev1", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev1"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 1]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 1], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 1]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 44.4ms | Allocations: 4248)
+Completed 200 OK in 53ms (Views: 43.6ms | ActiveRecord: 2.0ms | Allocations: 5972)
+
+
+Started POST "/v1/users/follow/3/dev1" for ::1 at 2019-12-17 09:52:23 +0700
+Processing by V1::UsersController#follow as HTML
+  Parameters: {"headers"=>{"normalizedNames"=>{}, "lazyUpdate"=>nil, "lazyInit"=>nil, "headers"=>{}}, "default"=>{"format"=>:json}, "id"=>"3", "username"=>"dev1", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:66:in `follow'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev1"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:67:in `follow'
+  [1m[36mUserFollowing Load (0.4ms)[0m  [1m[34mSELECT "user_followings".* FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? ORDER BY "user_followings"."id" ASC LIMIT ?[0m  [["source_user_id", 3], ["target_user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:68:in `follow'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  [1m[36mUserFollowing Create (2.8ms)[0m  [1m[32mINSERT INTO "user_followings" ("source_user_id", "target_user_id", "follow_flag", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["source_user_id", 3], ["target_user_id", 1], ["follow_flag", 1], ["created_at", "2019-12-17 02:52:23.516403"], ["updated_at", "2019-12-17 02:52:23.516403"]]
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  Rendering v1/users/follow.jbuilder
+  Rendered v1/users/follow.jbuilder (Duration: 0.1ms | Allocations: 33)
+Completed 200 OK in 28ms (Views: 0.5ms | ActiveRecord: 6.6ms | Allocations: 6122)
+
+
+Started POST "/v1/users/follow/3/dev1" for ::1 at 2019-12-17 09:52:40 +0700
+Processing by V1::UsersController#follow as HTML
+  Parameters: {"headers"=>{"normalizedNames"=>{}, "lazyUpdate"=>nil, "lazyInit"=>nil, "headers"=>{}}, "default"=>{"format"=>:json}, "id"=>"3", "username"=>"dev1", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:66:in `follow'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev1"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:67:in `follow'
+  [1m[36mUserFollowing Load (0.6ms)[0m  [1m[34mSELECT "user_followings".* FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? ORDER BY "user_followings"."id" ASC LIMIT ?[0m  [["source_user_id", 3], ["target_user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:68:in `follow'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  [1m[36mUserFollowing Update (0.4ms)[0m  [1m[33mUPDATE "user_followings" SET "follow_flag" = ?, "updated_at" = ? WHERE "user_followings"."id" = ?[0m  [["follow_flag", 0], ["updated_at", "2019-12-17 02:52:40.418479"], ["id", 2]]
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/v1/users_controller.rb:72:in `follow'
+  Rendering v1/users/follow.jbuilder
+  Rendered v1/users/follow.jbuilder (Duration: 0.1ms | Allocations: 33)
+Completed 200 OK in 24ms (Views: 1.0ms | ActiveRecord: 5.3ms | Allocations: 6133)
+
+
+Started GET "/v1/users/dev1/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 09:55:59 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev1", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev1"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 1]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 1], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 1]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 27.8ms | Allocations: 4554)
+Completed 200 OK in 44ms (Views: 27.2ms | ActiveRecord: 4.7ms | Allocations: 6277)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/soramac/Documents/HUST/Project3/UpFamous-API/config/environment.rb:5)
+Started GET "/v1/users/dev1/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 09:59:40 +0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev1", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev1"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 1]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 1], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 1]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.5ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 1], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 459.8ms | Allocations: 12843)
+Completed 200 OK in 582ms (Views: 459.2ms | ActiveRecord: 5.5ms | Allocations: 31682)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:00:30 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 156.1ms | Allocations: 5831)
+Completed 200 OK in 161ms (Views: 154.4ms | ActiveRecord: 2.8ms | Allocations: 7555)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:01:27 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 22.3ms | Allocations: 5763)
+Completed 200 OK in 32ms (Views: 20.2ms | ActiveRecord: 3.1ms | Allocations: 7486)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:01:35 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 85.3ms | Allocations: 5763)
+Completed 200 OK in 92ms (Views: 76.2ms | ActiveRecord: 10.9ms | Allocations: 7487)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:02:23 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 28.5ms | Allocations: 5763)
+Completed 200 OK in 38ms (Views: 26.9ms | ActiveRecord: 3.1ms | Allocations: 7486)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:02:39 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 23.1ms | Allocations: 5763)
+Completed 200 OK in 33ms (Views: 20.8ms | ActiveRecord: 3.7ms | Allocations: 7486)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:03:00 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (3.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 27.4ms | Allocations: 5763)
+Completed 200 OK in 37ms (Views: 23.4ms | ActiveRecord: 5.5ms | Allocations: 7486)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:03:15 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 52.9ms | Allocations: 5763)
+Completed 200 OK in 73ms (Views: 49.3ms | ActiveRecord: 5.5ms | Allocations: 7486)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:03:41 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 44.6ms | Allocations: 5763)
+Completed 200 OK in 62ms (Views: 42.7ms | ActiveRecord: 3.2ms | Allocations: 7486)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:04:19 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 43.6ms | Allocations: 5763)
+Completed 200 OK in 58ms (Views: 41.9ms | ActiveRecord: 4.0ms | Allocations: 7486)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:05:41 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 45.1ms | Allocations: 5763)
+Completed 200 OK in 71ms (Views: 44.4ms | ActiveRecord: 6.4ms | Allocations: 7486)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:10:35 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 71.8ms | Allocations: 5887)
+Completed 200 OK in 83ms (Views: 72.3ms | ActiveRecord: 3.4ms | Allocations: 7912)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:11:13 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 18.9ms | Allocations: 5763)
+Completed 200 OK in 68ms (Views: 49.0ms | ActiveRecord: 2.9ms | Allocations: 7487)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:12:08 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (1.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (3.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 31.6ms | Allocations: 5763)
+Completed 200 OK in 41ms (Views: 26.9ms | ActiveRecord: 6.4ms | Allocations: 7486)
+
+
+Started GET "/v1/users/dev2/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:12:46 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev2", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev2"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (1.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0 ORDER BY created_at DESC[0m
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mCollection Load (0.8ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ? AND "collections"."status" = ?[0m  [["user_id", 2], ["status", 0]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 21.4ms | Allocations: 5763)
+Completed 200 OK in 31ms (Views: 18.5ms | ActiveRecord: 4.6ms | Allocations: 7486)
+
+
+Started GET "/v1/items/search/dev" for ::1 at 2019-12-17 10:12:52 +0700
+Processing by V1::ItemsController#search as HTML
+  Parameters: {"default"=>{"format"=>:json}, "query"=>"dev", "item"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" WHERE (name like '%dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:60:in `search'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_tag_maps"."item_id" FROM "item_tag_maps" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:63:in `search'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (description like '%dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_tags"."collection_id" FROM "collection_tags" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:69:in `search'
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND 1=0[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND (describe like '%dev%' OR name like '%dev%')[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 12]]
+  ↳ app/controllers/v1/items_controller.rb:79:in `search'
+  Rendering v1/items/search.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (first_name like '%dev%' OR last_name like '%dev%' OR username like '%dev%')[0m
+  ↳ app/views/v1/items/search.jbuilder:4
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (first_name like '%dev%' OR last_name like '%dev%' OR username like '%dev%') ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/search.jbuilder:13
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 3], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 3]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE 1=0 AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["target_user_id", 3], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 93.5ms | Allocations: 11680)
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 2], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 10.9ms | Allocations: 2541)
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 1]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 1], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 16.9ms | Allocations: 2533)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/items/search.jbuilder:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/items/search.jbuilder:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/items/search.jbuilder:17
+  Rendered v1/items/search.jbuilder (Duration: 158.8ms | Allocations: 23675)
+Completed 200 OK in 203ms (Views: 157.1ms | ActiveRecord: 9.9ms | Allocations: 34922)
+
+
+Started GET "/v1/items/search/dev" for ::1 at 2019-12-17 10:12:54 +0700
+Processing by V1::ItemsController#search as HTML
+  Parameters: {"default"=>{"format"=>:json}, "query"=>"dev", "item"=>{}}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" WHERE (name like '%dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:60:in `search'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "item_tag_maps"."item_id" FROM "item_tag_maps" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:63:in `search'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (description like '%dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_tags"."collection_id" FROM "collection_tags" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:69:in `search'
+  [1m[36mCollection Load (0.4ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND 1=0[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND (describe like '%dev%' OR name like '%dev%')[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 12]]
+  ↳ app/controllers/v1/items_controller.rb:79:in `search'
+  Rendering v1/items/search.jbuilder
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (first_name like '%dev%' OR last_name like '%dev%' OR username like '%dev%')[0m
+  ↳ app/views/v1/items/search.jbuilder:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (first_name like '%dev%' OR last_name like '%dev%' OR username like '%dev%') ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/search.jbuilder:13
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 3], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 3]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE 1=0 AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["target_user_id", 3], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 42.0ms | Allocations: 2589)
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 2], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 12.8ms | Allocations: 2541)
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 1]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 1], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 11.4ms | Allocations: 2533)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/items/search.jbuilder:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/items/search.jbuilder:17
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/items/search.jbuilder:17
+  Rendered v1/items/search.jbuilder (Duration: 122.8ms | Allocations: 14308)
+Completed 200 OK in 143ms (Views: 117.0ms | ActiveRecord: 10.8ms | Allocations: 19419)
+
+
+Started GET "/v1/items/search/dev" for ::1 at 2019-12-17 10:14:56 +0700
+Processing by V1::ItemsController#search as HTML
+  Parameters: {"default"=>{"format"=>:json}, "query"=>"dev", "item"=>{}}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" WHERE (name like '%dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:60:in `search'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "item_tag_maps"."item_id" FROM "item_tag_maps" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:63:in `search'
+  [1m[36mItem Load (1.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (description like '%dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "collection_tags"."collection_id" FROM "collection_tags" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:69:in `search'
+  [1m[36mCollection Load (0.5ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND 1=0[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mCollection Load (0.4ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND (describe like '%dev%' OR name like '%dev%')[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 12]]
+  ↳ app/controllers/v1/items_controller.rb:79:in `search'
+  Rendering v1/items/search.jbuilder
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (first_name like '%dev%' OR last_name like '%dev%' OR username like '%dev%')[0m
+  ↳ app/views/v1/items/search.jbuilder:4
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (first_name like '%dev%' OR last_name like '%dev%' OR username like '%dev%') ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/search.jbuilder:13
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 3], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 3]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE 1=0 AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["target_user_id", 3], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 24.0ms | Allocations: 2589)
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 2], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 17.5ms | Allocations: 2541)
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 1]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 1], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 10.4ms | Allocations: 2533)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/items/search.jbuilder:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/items/search.jbuilder:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/items/search.jbuilder:17
+  Rendered v1/items/search.jbuilder (Duration: 85.9ms | Allocations: 14308)
+Completed 200 OK in 114ms (Views: 76.5ms | ActiveRecord: 16.1ms | Allocations: 19418)
+
+
+Started GET "/v1/items/search/dev" for ::1 at 2019-12-17 10:16:02 +0700
+Processing by V1::ItemsController#search as HTML
+  Parameters: {"default"=>{"format"=>:json}, "query"=>"dev", "item"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" WHERE (name like '%dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:60:in `search'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_tag_maps"."item_id" FROM "item_tag_maps" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:63:in `search'
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (description like '%dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_tags"."collection_id" FROM "collection_tags" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:69:in `search'
+  [1m[36mCollection Load (0.4ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND 1=0[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mCollection Load (1.4ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND (describe like '%dev%' OR name like '%dev%')[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 12]]
+  ↳ app/controllers/v1/items_controller.rb:79:in `search'
+  Rendering v1/items/search.jbuilder
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (first_name like '%dev%' OR last_name like '%dev%' OR username like '%dev%')[0m
+  ↳ app/views/v1/items/search.jbuilder:4
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (first_name like '%dev%' OR last_name like '%dev%' OR username like '%dev%') ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/search.jbuilder:13
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 3], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 3]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE 1=0 AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["target_user_id", 3], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 8.4ms | Allocations: 2589)
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 2], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 24.8ms | Allocations: 2541)
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 1]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 1], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 16.7ms | Allocations: 2533)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/items/search.jbuilder:17
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/items/search.jbuilder:17
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/items/search.jbuilder:17
+  Rendered v1/items/search.jbuilder (Duration: 76.9ms | Allocations: 14308)
+Completed 200 OK in 113ms (Views: 78.1ms | ActiveRecord: 10.5ms | Allocations: 19418)
+
+
+Started GET "/v1/items/search/dev" for ::1 at 2019-12-17 10:16:51 +0700
+Processing by V1::ItemsController#search as HTML
+  Parameters: {"default"=>{"format"=>:json}, "query"=>"dev", "item"=>{}}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" WHERE (name like '%dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:60:in `search'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "item_tag_maps"."item_id" FROM "item_tag_maps" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:63:in `search'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (description like '%dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_tags"."collection_id" FROM "collection_tags" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:69:in `search'
+  [1m[36mCollection Load (0.5ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND 1=0[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND (describe like '%dev%' OR name like '%dev%')[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 12]]
+  ↳ app/controllers/v1/items_controller.rb:79:in `search'
+  Rendering v1/items/search.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (first_name like '%dev%' OR last_name like '%dev%' OR username like '%dev%')[0m
+  ↳ app/views/v1/items/search.jbuilder:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (first_name like '%dev%' OR last_name like '%dev%' OR username like '%dev%') ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/search.jbuilder:13
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 3], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 3]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE 1=0 AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["target_user_id", 3], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 21.0ms | Allocations: 2589)
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 2], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 131.4ms | Allocations: 2543)
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 1]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 1], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 13.3ms | Allocations: 2533)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/items/search.jbuilder:17
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/items/search.jbuilder:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/items/search.jbuilder:17
+  Rendered v1/items/search.jbuilder (Duration: 254.1ms | Allocations: 14310)
+Completed 200 OK in 282ms (Views: 249.4ms | ActiveRecord: 9.3ms | Allocations: 19421)
+
+
+Started GET "/v1/items/search/dev" for ::1 at 2019-12-17 10:17:17 +0700
+Processing by V1::ItemsController#search as HTML
+  Parameters: {"default"=>{"format"=>:json}, "query"=>"dev", "item"=>{}}
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" WHERE (name like '%dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:60:in `search'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_tag_maps"."item_id" FROM "item_tag_maps" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:63:in `search'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (description like '%dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "collection_tags"."collection_id" FROM "collection_tags" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:69:in `search'
+  [1m[36mCollection Load (0.4ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND 1=0[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND (describe like '%dev%' OR name like '%dev%')[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 12]]
+  ↳ app/controllers/v1/items_controller.rb:79:in `search'
+  Rendering v1/items/search.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (first_name like '%dev%' OR last_name like '%dev%' OR username like '%dev%')[0m
+  ↳ app/views/v1/items/search.jbuilder:4
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (first_name like '%dev%' OR last_name like '%dev%' OR username like '%dev%') ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/search.jbuilder:13
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 3], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 3]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE 1=0 AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["target_user_id", 3], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 13.2ms | Allocations: 2589)
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 2], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 18.5ms | Allocations: 2541)
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 1]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 1], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 14.9ms | Allocations: 2533)
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/items/search.jbuilder:17
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/items/search.jbuilder:17
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/items/search.jbuilder:17
+  Rendered v1/items/search.jbuilder (Duration: 98.0ms | Allocations: 14309)
+Completed 200 OK in 121ms (Views: 85.2ms | ActiveRecord: 17.3ms | Allocations: 19422)
+
+
+Started GET "/v1/items/search/dev" for ::1 at 2019-12-17 10:17:39 +0700
+Processing by V1::ItemsController#search as HTML
+  Parameters: {"default"=>{"format"=>:json}, "query"=>"dev", "item"=>{}}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" WHERE (name like '%dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:60:in `search'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "item_tag_maps"."item_id" FROM "item_tag_maps" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:63:in `search'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (description like '%dev%')[0m
+  ↳ app/controllers/v1/items_controller.rb:66:in `search'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "collection_tags"."collection_id" FROM "collection_tags" WHERE 1=0[0m
+  ↳ app/controllers/v1/items_controller.rb:69:in `search'
+  [1m[36mCollection Load (1.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND 1=0[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mCollection Load (0.4ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."status" = ? AND (describe like '%dev%' OR name like '%dev%')[0m  [["status", 0]]
+  ↳ app/controllers/v1/items_controller.rb:72:in `search'
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 12]]
+  ↳ app/controllers/v1/items_controller.rb:79:in `search'
+  Rendering v1/items/search.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (first_name like '%dev%' OR last_name like '%dev%' OR username like '%dev%')[0m
+  ↳ app/views/v1/items/search.jbuilder:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (first_name like '%dev%' OR last_name like '%dev%' OR username like '%dev%') ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/search.jbuilder:13
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 3], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 3]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE 1=0 AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["target_user_id", 3], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 25.2ms | Allocations: 2589)
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 2], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 2]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 2], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 15.3ms | Allocations: 2541)
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 3]]
+  ↳ app/models/user.rb:46:in `feature_items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 1]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE "user_followings"."source_user_id" = ? AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["source_user_id", 3], ["target_user_id", 1], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  Rendered v1/users/_user.jbuilder (Duration: 27.5ms | Allocations: 2533)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/items/search.jbuilder:17
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/v1/items/search.jbuilder:17
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/items/search.jbuilder:17
+  Rendered v1/items/search.jbuilder (Duration: 124.2ms | Allocations: 14309)
+Completed 200 OK in 158ms (Views: 118.1ms | ActiveRecord: 12.9ms | Allocations: 19419)
+
+
+Started GET "/v1/users/dev3/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:17:42 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev3", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev3"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 3]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE 1=0 AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["target_user_id", 3], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (63.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 46.9ms | Allocations: 4231)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 2.1ms | Allocations: 833)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 5.2ms | Allocations: 833)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 6.2ms | Allocations: 833)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 16.9ms | Allocations: 1719)
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:9:in `feature_imgs'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:22:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:18:in `ids'
+  Rendered v1/collections/_collection.jbuilder (Duration: 13.4ms | Allocations: 4542)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.3ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mCACHE ItemLikeMap Load (0.0ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 232.7ms | Allocations: 35563)
+Completed 200 OK in 252ms (Views: 162.4ms | ActiveRecord: 72.0ms | Allocations: 37120)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-17 10:17:47 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 5.1ms | Allocations: 1546)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 3]]
+Started GET "/v1/items/homepage" for ::1 at 2019-12-17 10:17:47 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 36.3ms | Allocations: 4390)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mItem Load (4.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 11.1ms | Allocations: 2248)
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 23.4ms | Allocations: 1877)
+  [1m[36mItemLikeMap Load (0.3ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 34.3ms | Allocations: 3790)
+Completed 200 OK in 57ms (Views: 37.5ms | ActiveRecord: 6.2ms | Allocations: 6619)
+
+
+  [1m[36mItemLikeMap Load (0.8ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (13.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.3ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  Rendered v1/items/endless_item.jbuilder (Duration: 252.4ms | Allocations: 17145)
+Completed 200 OK in 261ms (Views: 243.5ms | ActiveRecord: 16.6ms | Allocations: 17506)
+
+
+Started GET "/v1/items/show/3" for ::1 at 2019-12-17 10:17:57 +0700
+Processing by V1::ItemsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item_id"=>"3", "item"=>{}}
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:13:in `show'
+  Rendering v1/items/show.jbuilder
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 9.8ms | Allocations: 1582)
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/items/show.jbuilder:3
+  Rendered v1/items/show.jbuilder (Duration: 16.7ms | Allocations: 2963)
+Completed 200 OK in 26ms (Views: 16.4ms | ActiveRecord: 2.8ms | Allocations: 3902)
+
+
+Started GET "/v1/items/all" for ::1 at 2019-12-17 10:18:08 +0700
+Processing by V1::ItemsController#endless_item as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  Rendering v1/items/endless_item.jbuilder
+Started GET "/v1/items/homepage" for ::1 at 2019-12-17 10:18:08 +0700
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  ↳ app/views/v1/items/endless_item.jbuilder:2
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by V1::ItemsController#homepage_thumbnail as HTML
+  ↳ app/views/v1/items/_item.jbuilder:7
+  Parameters: {"default"=>{"format"=>:json}, "item"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 8.7ms | Allocations: 2113)
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (width > height) ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:4:in `homepage_thumbnail'
+  Rendering v1/items/homepage_thumbnail.jbuilder
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/items/homepage_thumbnail.jbuilder:10
+  Rendered v1/items/homepage_thumbnail.jbuilder (Duration: 5.9ms | Allocations: 1819)
+  ↳ app/models/item.rb:22:in `collection_ids'
+Completed 200 OK in 19ms (Views: 12.4ms | ActiveRecord: 0.6ms | Allocations: 3728)
+
+
+  Rendered v1/items/_item.jbuilder (Duration: 16.2ms | Allocations: 2993)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 5.9ms | Allocations: 1515)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 4.3ms | Allocations: 1479)
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/views/v1/items/endless_item.jbuilder:5
+  Rendered v1/items/endless_item.jbuilder (Duration: 128.9ms | Allocations: 15536)
+Completed 200 OK in 135ms (Views: 127.7ms | ActiveRecord: 2.8ms | Allocations: 16078)
+
+
+Started GET "/v1/users/dev3/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:18:14 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev3", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev3"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 3]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE 1=0 AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["target_user_id", 3], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 8.1ms | Allocations: 836)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 2.3ms | Allocations: 833)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 5.4ms | Allocations: 833)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 2.5ms | Allocations: 833)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 48.6ms | Allocations: 1510)
+  [1m[36mCollection Load (0.7ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:9:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:22:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:18:in `ids'
+  Rendered v1/collections/_collection.jbuilder (Duration: 103.4ms | Allocations: 4376)
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.6ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.3ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mCACHE ItemLikeMap Load (0.3ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 259.6ms | Allocations: 22153)
+Completed 200 OK in 274ms (Views: 248.1ms | ActiveRecord: 13.0ms | Allocations: 23710)
+
+
+Started GET "/v1/users/dev3/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:18:17 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev3", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev3"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 3]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE 1=0 AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["target_user_id", 3], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 3.7ms | Allocations: 838)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 2.2ms | Allocations: 833)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 2.4ms | Allocations: 833)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 2.1ms | Allocations: 833)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 8.9ms | Allocations: 1510)
+  [1m[36mCollection Load (8.5ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[36mItem Load (71.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:9:in `feature_imgs'
+  [1m[35mCACHE  (0.2ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:22:in `img_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:18:in `ids'
+  Rendered v1/collections/_collection.jbuilder (Duration: 96.3ms | Allocations: 4376)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mCACHE ItemLikeMap Load (0.1ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 222.4ms | Allocations: 22156)
+Completed 200 OK in 230ms (Views: 138.3ms | ActiveRecord: 85.8ms | Allocations: 23713)
+
+
+Started GET "/v1/users/dev3/s6b1ywXfpTAEjNB-aQCH" for ::1 at 2019-12-17 10:18:28 +0700
+Processing by V1::UsersController#user_info as HTML
+  Parameters: {"default"=>{"format"=>:json}, "username"=>"dev3", "token"=>"s6b1ywXfpTAEjNB-aQCH", "user"=>{}}
+  [1m[36mUser Load (65.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["username", "dev3"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `user_info'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "s6b1ywXfpTAEjNB-aQCH"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:18:in `user_info'
+  Rendering v1/users/user_info.jbuilder
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "user_followings" ON "users"."id" = "user_followings"."source_user_id" WHERE "user_followings"."target_user_id" = ?[0m  [["target_user_id", 3]]
+  ↳ app/models/user.rb:50:in `active_follower'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "user_followings"."source_user_id" FROM "user_followings" WHERE 1=0 AND "user_followings"."target_user_id" = ? AND "user_followings"."follow_flag" = ?[0m  [["target_user_id", 3], ["follow_flag", 1]]
+  ↳ app/models/user.rb:51:in `active_follower'
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:8
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 2.8ms | Allocations: 836)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 41.0ms | Allocations: 833)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 6.0ms | Allocations: 833)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 4.0ms | Allocations: 833)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "item_like_maps"."item_id" FROM "item_like_maps" WHERE "item_like_maps"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/user.rb:41:in `like_items'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 10.9ms | Allocations: 1510)
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:14
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 4], ["LIMIT", 3]]
+  ↳ app/models/collection.rb:9:in `feature_imgs'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:22:in `img_count'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "collection_items"."item_id" FROM "collection_items" WHERE "collection_items"."collection_id" = ? AND "collection_items"."deleted_flag" = ?[0m  [["collection_id", 2], ["deleted_flag", 0]]
+  ↳ app/models/collection.rb:13:in `items'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "items"."id" FROM "items" WHERE "items"."id" = ? ORDER BY created_at DESC[0m  [["id", 4]]
+  ↳ app/models/collection.rb:18:in `ids'
+  Rendered v1/collections/_collection.jbuilder (Duration: 65.1ms | Allocations: 4376)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE 1=0[0m
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.3ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.3ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 3]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.3ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 2]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mItemLikeMap Load (0.2ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 1]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  [1m[36mCACHE ItemLikeMap Load (0.1ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/users/user_info.jbuilder:17
+  Rendered v1/users/user_info.jbuilder (Duration: 278.9ms | Allocations: 22153)
+Completed 200 OK in 352ms (Views: 271.6ms | ActiveRecord: 74.3ms | Allocations: 23709)
+
+
+Started GET "/v1/items/show/4" for ::1 at 2019-12-17 10:18:31 +0700
+Processing by V1::ItemsController#show as HTML
+  Parameters: {"default"=>{"format"=>:json}, "item_id"=>"4", "item"=>{}}
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/v1/items_controller.rb:13:in `show'
+  Rendering v1/items/show.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/v1/items/_item.jbuilder:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collection_items"."collection_id" FROM "collection_items" WHERE "collection_items"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/models/item.rb:22:in `collection_ids'
+  Rendered v1/items/_item.jbuilder (Duration: 5.8ms | Allocations: 1507)
+  [1m[36mItemLikeMap Load (0.7ms)[0m  [1m[34mSELECT "item_like_maps".* FROM "item_like_maps" WHERE "item_like_maps"."item_id" = ?[0m  [["item_id", 4]]
+  ↳ app/views/v1/items/show.jbuilder:3
+  Rendered v1/items/show.jbuilder (Duration: 9.5ms | Allocations: 3040)
+Completed 200 OK in 19ms (Views: 12.5ms | ActiveRecord: 2.3ms | Allocations: 3708)
+
+

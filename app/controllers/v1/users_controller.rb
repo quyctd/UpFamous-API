@@ -62,6 +62,21 @@ module V1
       end
     end
 
+    def follow
+      root = User.find(params[:id])
+      target = User.where(username: params[:username]).first
+      user_follow = UserFollowing.where(source_user_id: root.id, target_user_id: target.id).first
+      user_follow ||= UserFollowing.new(source_user_id: root.id, target_user_id: target.id)
+      user_follow.follow_flag = user_follow.follow_flag ? !user_follow.follow_flag : true
+
+      if user_follow.save!
+        @follow_tag = user_follow.follow_flag
+        render :follow, status: :ok
+      else
+        head(:unprocessable_entity)
+      end
+    end
+
     private
 
     def update_ava_params

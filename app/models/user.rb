@@ -45,4 +45,9 @@ class User < ApplicationRecord
   def feature_items
     items.newest.take(3)
   end
+
+  def active_follower
+    users = UserFollowing.where(source_user_id: follower_ids, target_user_id: id, follow_flag: true)
+    User.where(id: users.pluck(:source_user_id).uniq)
+  end
 end
