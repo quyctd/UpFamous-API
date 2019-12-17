@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_17_110905) do
+ActiveRecord::Schema.define(version: 2019_12_17_154135) do
 
   create_table "collection_items", force: :cascade do |t|
     t.integer "collection_id"
@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 2019_12_17_110905) do
     t.string "cloudinary_id"
     t.string "cloudinary_ver"
     t.string "format"
+    t.string "location"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 

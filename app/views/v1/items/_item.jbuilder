@@ -11,3 +11,4 @@ json.likes item.item_like_maps
 json.collections item.collection_ids
 json.description item.description
 json.item_like_maps item.item_like_maps
+json.location item.location

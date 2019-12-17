@@ -36,6 +36,12 @@ module V1
       end
     end
 
+    def build_item_exif
+      results = Cloudinary::Api.resource(@item.cloudinary_id, image_metadata: true)
+      exif = results['image_metadata']
+      item_exif = ItemExif.new()
+    end
+
     def create_item_count(item_id)
       ItemLikeCount.create!(item_id: item_id)
       ItemViewCount.create!(item_id: item_id)
@@ -92,7 +98,8 @@ module V1
         deleted_flag: 0,
         cloudinary_id: uparams[:cloudinary_id],
         cloudinary_ver: uparams[:cloudinary_ver],
-        format: uparams[:format]
+        format: uparams[:format],
+        location: uparams[:location]
       }
     end
   end
