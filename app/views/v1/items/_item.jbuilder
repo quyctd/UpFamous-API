@@ -1,6 +1,7 @@
 json.id item.id
 json.width item.width
 json.height item.height
+json.created_at item.created_at
 json.cloudinary_ver item.cloudinary_ver
 json.cloudinary_id item.cloudinary_id
 json.format item.format
